@@ -1,0 +1,47 @@
+openapi: '3.1.0'
+info:
+  title: '库存管理系统接口'
+  version: '0.0.1'
+
+servers:
+  - url: https://development.gigantic-server.com/v1
+    description: Development server
+  - url: https://staging.gigantic-server.com/v1
+    description: Staging server
+  - url: https://api.gigantic-server.com/v1
+    description: Production server
+
+security:
+  - oauth2: []
+  - bearerAuth: []
+
+paths:
+  # 仓库接口
+  /warehouse:
+    $ref: './paths/warehouse/create.yaml'
+
+components:
+  securitySchemes:
+    # 这里是swagger-codegen已知问题的workaround，实际不需要oauth2认证
+    oauth2:
+      type: oauth2
+      flows:
+        password:
+          tokenUrl: /auth/login
+          scopes: { }
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+  schemas:
+    # 通用
+    Address:
+      $ref: './schemas/common/Address.yaml'
+    # 仓库
+    Warehouse:
+      $ref: './schemas/warehouse/Warehouse.yaml'
+    CreateWarehouseReq:
+      $ref: './schemas/warehouse/CreateWarehouseReq.yaml'
+    CreateWarehouseResp:
+      $ref: './schemas/warehouse/CreateWarehouseResp.yaml'

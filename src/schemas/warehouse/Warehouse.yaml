@@ -1,0 +1,13 @@
+type: Object
+properties:
+  id:
+    type: Integer
+    description: 仓库ID
+
+  name:
+    type: String
+    description: 仓库名称
+
+  address:
+    $ref: '../../index.yaml#/components/schemas/Address'
+    description: 仓库地址

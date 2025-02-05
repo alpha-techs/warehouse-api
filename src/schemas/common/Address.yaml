@@ -1,0 +1,19 @@
+type: object
+description: 地址
+properties:
+  postalCode:
+    type: string
+    description: 邮政编码
+  prefectureId:
+    type: integer
+    format: int32
+    description: 都道府县ID
+  detailAddress1:
+    type: string
+    description: 市区町村
+  detailAddress2:
+    type: string
+    description: 丁目・番地・号
+  detailAddress3:
+    type: string
+    description: 建物名・部屋番号

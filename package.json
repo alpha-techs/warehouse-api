@@ -1,0 +1,12 @@
+{
+  "name": "warehouse-api",
+  "version": "1.0.0",
+  "description": "Swagger definition of Warehouse project",
+  "scripts": {
+    "gen-swagger": "swagger-cli bundle -t yaml -o gen/api.yaml src/index.yaml"
+  },
+  "private": true,
+  "dependencies": {
+    "swagger-cli": "^4.0.4"
+  }
+}
