@@ -1,0 +1,64 @@
+type: object
+properties:
+  id:
+    type: integer
+    description: 入库记录ID
+  inboundOrderId:
+    type: string
+    description: 入库订单ID
+  inboundDate:
+    type: string
+    format: date
+    description: 入库日期
+  customerOrderId:
+    type: string
+    description: 客户订单号
+  warehouse:
+    type: object
+    properties:
+      id:
+        type: integer
+        description: 仓库ID
+      name:
+        type: string
+        description: 仓库名称
+  customer:
+    type: object
+    properties:
+      id:
+        type: integer
+        description: 客户ID
+      name:
+        type: string
+        description: 客户名称
+  customerContact:
+    type: object
+    properties:
+      id:
+        type: integer
+        description: 客户联系人ID
+      name:
+        type: string
+        description: 客户联系人名称
+  items:
+    type: array
+    description: 入库物品列表
+    items:
+      $ref: '../../index.yaml#/components/schemas/InboundItem'
+  storageFeePlans:
+    type: array
+    description: 保管费用计划列表
+    items:
+      $ref: '../../index.yaml#/components/schemas/StorageFeePlan'
+  status:
+    type: string
+    description: 入库状态
+    enum:
+      - draft
+      - pending
+      - approved
+      - rejected
+      - cancelled
+  createdAt:
+    type: string
+    description: 创建时间

@@ -1,0 +1,18 @@
+post:
+  summary: 创建商品
+  operationId: createProduct
+  tags:
+    - 商品
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: '../../index.yaml#/components/schemas/CreateProductReq'
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: '../../index.yaml#/components/schemas/CreateProductResp'

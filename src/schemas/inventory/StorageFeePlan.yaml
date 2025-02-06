@@ -1,0 +1,11 @@
+type: object
+properties:
+  id:
+    type: integer
+    description: 保管费用计划ID
+  fromDate:
+    type: string
+    description: 开始日期
+  payerName:
+    type: string
+    description: 付款方名称

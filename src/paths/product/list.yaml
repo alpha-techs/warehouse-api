@@ -1,8 +1,8 @@
 get:
-  summary: 仓库列表
-  operationId: listWarehouses
+  summary: 获取商品列表
+  operationId: listProducts
   tags:
-    - 仓库
+    - 商品
   parameters:
     - name: page
       in: query
@@ -18,13 +18,23 @@ get:
         default: 20
     - name: name
       in: query
-      description: 仓库名称
+      description: 商品名称
       schema:
         type: string
+    - name: sku
+      in: query
+      description: 商品SKU
+      schema:
+        type: string
+    - name: isActive
+      in: query
+      description: 是否激活
+      schema:
+        type: boolean
   responses:
     '200':
       description: 成功
       content:
         application/json:
           schema:
-            $ref: '../../index.yaml#/components/schemas/ListWarehousesResp'
+            $ref: '../../index.yaml#/components/schemas/ListProductsResp'

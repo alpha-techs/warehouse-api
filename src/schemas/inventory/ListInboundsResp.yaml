@@ -5,4 +5,4 @@ allOf:
       items:
         type: array
         items:
-          $ref: '../../index.yaml#/components/schemas/Warehouse'
+          $ref: '../../index.yaml#/components/schemas/Inbound'

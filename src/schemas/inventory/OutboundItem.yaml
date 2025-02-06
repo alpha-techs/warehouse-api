@@ -1,0 +1,65 @@
+type: object
+properties:
+  id:
+    type: integer
+    description: 出库物品ID
+  outboundId:
+    type: integer
+    description: 出库记录ID
+  inboundItemId:
+    type: integer
+    description: 入库物品ID
+  inventoryItemId:
+    type: integer
+    description: 库存物品ID
+  product:
+    type: object
+    properties:
+      id:
+        type: integer
+        description: 商品ID
+      name:
+        type: string
+        description: 商品名称
+      dimension:
+        type: object
+        properties:
+          description:
+            type: string
+            description: 尺寸描述
+          length:
+            type: number
+            description: 长度
+          width:
+            type: number
+            description: 宽度
+          height:
+            type: number
+            description: 高度
+          lengthUnit:
+            type: string
+            description: 长度单位
+            enum:
+              - cm
+              - m
+          weight:
+            type: number
+            description: 重量
+          weightUnit:
+            type: string
+            description: 重量单位
+            enum:
+              - kg
+              - g
+  lotNumber:
+    type: string
+    description: 批次号
+  inventoryQuantity:
+    type: integer
+    description: 库存数量
+  quantity:
+    type: integer
+    description: 出库数量
+  note:
+    type: string
+    description: 备注

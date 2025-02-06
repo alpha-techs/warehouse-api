@@ -1,0 +1,64 @@
+type: object
+properties:
+  id:
+    type: integer
+    description: 商品ID
+  name:
+    type: string
+    description: 商品名
+  sku:
+    type: string
+    description: 商品SKU
+  leafCategory:
+    $ref: '../../index.yaml#/components/schemas/ProductCategory'
+    description: 最小商品种类ID
+  categoryRoute:
+    type: array
+    description: 商品种类路径
+    items:
+      $ref: '../../index.yaml#/components/schemas/ProductCategory'
+  cargoMark:
+    type: string
+    description: 货物标记
+  dimension:
+    type: object
+    properties:
+      description:
+        type: string
+        description: 尺寸描述
+      length:
+        type: number
+        description: 长度
+      width:
+        type: number
+        description: 宽度
+      height:
+        type: number
+        description: 高度
+      lengthUnit:
+        type: string
+        description: 长度单位
+        enum:
+          - cm
+          - m
+      weight:
+        type: number
+        description: 重量
+      weightUnit:
+        type: string
+        description: 重量单位
+        enum:
+          - kg
+          - g
+  hasSubPackage:
+    type: boolean
+    description: 是否存在子包装
+  subPackageCount:
+    type: integer
+    description: 子包装数量
+  isFixedWeight:
+    type: boolean
+    description: 是否固定重量
+  isActive:
+    type: boolean
+    description: 是否激活

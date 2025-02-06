@@ -17,12 +17,58 @@ security:
 
 paths:
   # 仓库接口
+  /warehouses:
+    $ref: './paths/warehouse/list.yaml'
   /warehouse:
     $ref: './paths/warehouse/create.yaml'
   /warehouse/{id}:
     $ref: './paths/warehouse/id.yaml'
-  /warehouses:
-    $ref: './paths/warehouse/list.yaml'
+
+  # 商品接口
+  /products:
+    $ref: './paths/product/list.yaml'
+  /product:
+    $ref: './paths/product/create.yaml'
+  /product/{id}:
+    $ref: './paths/product/id.yaml'
+
+  # 客户接口
+  /customers:
+    $ref: './paths/customer/list.yaml'
+  /customer:
+    $ref: './paths/customer/create.yaml'
+  /customer/{id}:
+    $ref: './paths/customer/id.yaml'
+
+  # 库存接口
+  /inventory/inbounds:
+    $ref: './paths/inventory/inboundList.yaml'
+  /inventory/inbound:
+    $ref: './paths/inventory/inbound.yaml'
+  /inventory/inbound/{id}:
+    $ref: './paths/inventory/inboundId.yaml'
+  /inventory/inbound/{id}/approve:
+    $ref: './paths/inventory/inboundApprove.yaml'
+  /inventory/inbound/{id}/reject:
+    $ref: './paths/inventory/inboundReject.yaml'
+  /inventory/inbound/{id}/cancel:
+    $ref: './paths/inventory/inboundCancel.yaml'
+
+  /inventory/outbounds:
+    $ref: './paths/inventory/outboundList.yaml'
+  /inventory/outbound:
+    $ref: './paths/inventory/outbound.yaml'
+  /inventory/outbound/{id}:
+    $ref: './paths/inventory/outboundId.yaml'
+  /inventory/outbound/{id}/approve:
+    $ref: './paths/inventory/outboundApprove.yaml'
+  /inventory/outbound/{id}/reject:
+    $ref: './paths/inventory/outboundReject.yaml'
+  /inventory/outbound/{id}/cancel:
+    $ref: './paths/inventory/outboundCancel.yaml'
+
+  /inventory/list:
+    $ref: './paths/inventory/list.yaml'
 
 components:
   securitySchemes:
@@ -55,3 +101,48 @@ components:
       $ref: './schemas/warehouse/GetWarehouseResp.yaml'
     ListWarehousesResp:
       $ref: './schemas/warehouse/ListWarehousesResp.yaml'
+    # 商品
+    Product:
+      $ref: './schemas/product/Product.yaml'
+    ProductCategory:
+      $ref: './schemas/product/ProductCategory.yaml'
+    CreateProductReq:
+      $ref: './schemas/product/CreateProductReq.yaml'
+    CreateProductResp:
+      $ref: './schemas/product/CreateProductResp.yaml'
+    GetProductResp:
+      $ref: './schemas/product/GetProductResp.yaml'
+    ListProductsResp:
+      $ref: './schemas/product/ListProductsResp.yaml'
+    # 客户
+    Customer:
+      $ref: './schemas/customer/Customer.yaml'
+    CreateCustomerReq:
+      $ref: './schemas/customer/CreateCustomerReq.yaml'
+    CreateCustomerResp:
+      $ref: './schemas/customer/CreateCustomerResp.yaml'
+    GetCustomerResp:
+      $ref: './schemas/customer/GetCustomerResp.yaml'
+    ListCustomersResp:
+      $ref: './schemas/customer/ListCustomersResp.yaml'
+    CustomerContact:
+      $ref: './schemas/customer/CustomerContact.yaml'
+    # 库存
+    InventoryItem:
+      $ref: './schemas/inventory/InventoryItem.yaml'
+    ListInventoryResp:
+      $ref: './schemas/inventory/ListInventoryResp.yaml'
+    StorageFeePlan:
+      $ref: './schemas/inventory/StorageFeePlan.yaml'
+    Inbound:
+      $ref: './schemas/inventory/Inbound.yaml'
+    ListInboundsResp:
+      $ref: './schemas/inventory/ListInboundsResp.yaml'
+    InboundItem:
+      $ref: './schemas/inventory/InboundItem.yaml'
+    Outbound:
+      $ref: './schemas/inventory/Outbound.yaml'
+    ListOutboundsResp:
+      $ref: './schemas/inventory/ListOutboundsResp.yaml'
+    OutboundItem:
+      $ref: './schemas/inventory/OutboundItem.yaml'

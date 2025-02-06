@@ -1,8 +1,8 @@
 get:
-  summary: 仓库列表
-  operationId: listWarehouses
+  summary: 入库单列表
+  operationId: listInbounds
   tags:
-    - 仓库
+    - 库存
   parameters:
     - name: page
       in: query
@@ -16,15 +16,10 @@ get:
       schema:
         type: integer
         default: 20
-    - name: name
-      in: query
-      description: 仓库名称
-      schema:
-        type: string
   responses:
     '200':
       description: 成功
       content:
         application/json:
           schema:
-            $ref: '../../index.yaml#/components/schemas/ListWarehousesResp'
+            $ref: '../../index.yaml#/components/schemas/ListInboundsResp'

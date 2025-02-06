@@ -1,8 +1,8 @@
 get:
-  summary: 获取仓库详情
-  operationId: getWarehouse
+  summary: 出库单详情
+  operationId: getOutbound
   tags:
-    - 仓库
+    - 库存
   parameters:
     - name: id
       in: path
@@ -10,20 +10,20 @@ get:
       schema:
         type: integer
         format: int32
-        description: 仓库 ID
+        description: 入库单ID
   responses:
     '200':
       description: 成功
       content:
         application/json:
           schema:
-            $ref: '../../index.yaml#/components/schemas/GetWarehouseResp'
+            $ref: '../../index.yaml#/components/schemas/Outbound'
 
 put:
-  summary: 更新仓库
-  operationId: updateWarehouse
+  summary: 更新出库单
+  operationId: updateOutbound
   tags:
-    - 仓库
+    - 库存
   parameters:
     - name: id
       in: path
@@ -31,25 +31,25 @@ put:
       schema:
         type: integer
         format: int32
-        description: 仓库 ID
+        description: 出库单ID
   requestBody:
+    required: true
     content:
       application/json:
         schema:
-          $ref: '../../index.yaml#/components/schemas/Warehouse'
+          $ref: '../../index.yaml#/components/schemas/Outbound'
   responses:
     '200':
       description: 成功
       content:
         application/json:
           schema:
-            $ref: '../../index.yaml#/components/schemas/GetWarehouseResp'
-
+            $ref: '../../index.yaml#/components/schemas/Outbound'
 delete:
-  summary: 删除仓库
-  operationId: deleteWarehouse
+  summary: 删除出库单
+  operationId: deleteOutbound
   tags:
-    - 仓库
+    - 库存
   parameters:
     - name: id
       in: path
@@ -57,11 +57,4 @@ delete:
       schema:
         type: integer
         format: int32
-        description: 仓库 ID
-  responses:
-    '200':
-      description: 成功
-      content:
-        application/json:
-          schema:
-            type: object
+        description: 出库单ID

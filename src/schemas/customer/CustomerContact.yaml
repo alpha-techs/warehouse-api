@@ -1,0 +1,17 @@
+type: object
+properties:
+  id:
+    type: integer
+    description: 联系人ID
+  customerId:
+    type: integer
+    description: 客户ID
+  name:
+    type: string
+    description: 联系人名
+  tel:
+    type: string
+    description: 电话
+  email:
+    type: string
+    description: 邮箱

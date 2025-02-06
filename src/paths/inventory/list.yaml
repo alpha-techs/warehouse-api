@@ -1,0 +1,40 @@
+get:
+  summary: 库存列表
+  operationId: listInventory
+  tags:
+    - 库存
+  parameters:
+    - name: page
+      in: query
+      description: 页码
+      schema:
+        type: integer
+        default: 1
+    - name: itemsPerPage
+      in: query
+      description: 每页数量
+      schema:
+        type: integer
+        default: 20
+    - name: warehouseId
+      in: query
+      description: 仓库ID
+      schema:
+        type: integer
+    - name: customerId
+      in: query
+      description: 客户ID
+      schema:
+        type: integer
+    - name: productId
+      in: query
+      description: 商品ID
+      schema:
+        type: integer
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: '../../index.yaml#/components/schemas/ListInventoryResp'

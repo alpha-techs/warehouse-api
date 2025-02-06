@@ -1,0 +1,11 @@
+type: object
+properties:
+  id:
+    type: integer
+    description: 商品种类ID
+  parentId:
+    type: integer
+    description: 父商品种类ID
+  name:
+    type: string
+    description: 商品种类名称

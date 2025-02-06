@@ -1,8 +1,8 @@
 get:
-  summary: 仓库列表
-  operationId: listWarehouses
+  summary: 获取客户列表
+  operationId: listCustomers
   tags:
-    - 仓库
+    - 客户
   parameters:
     - name: page
       in: query
@@ -18,7 +18,7 @@ get:
         default: 20
     - name: name
       in: query
-      description: 仓库名称
+      description: 客户名
       schema:
         type: string
   responses:
@@ -27,4 +27,4 @@ get:
       content:
         application/json:
           schema:
-            $ref: '../../index.yaml#/components/schemas/ListWarehousesResp'
+            $ref: '../../index.yaml#/components/schemas/ListCustomersResp'

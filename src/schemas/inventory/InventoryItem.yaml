@@ -1,0 +1,106 @@
+type: object
+properties:
+  id:
+    type: integer
+    description: 库存物品ID
+  warehouse:
+    type: object
+    properties:
+      id:
+        type: integer
+        description: 仓库ID
+      name:
+        type: string
+        description: 仓库名称
+  customer:
+    type: object
+    properties:
+      id:
+        type: integer
+        description: 客户ID
+      name:
+        type: string
+        description: 客户名称
+  inboundOrderId:
+    type: string
+    description: 入库订单ID
+  inboundId:
+    type: integer
+    description: 入库记录ID
+  inboundItemId:
+    type: integer
+    description: 入库物品ID
+  inboundDate:
+    type: string
+    description: 入库日期
+  product:
+    type: object
+    properties:
+      id:
+        type: integer
+        description: 商品ID
+      name:
+        type: string
+        description: 商品名称
+      dimension:
+        type: object
+        properties:
+          description:
+            type: string
+            description: 尺寸描述
+          length:
+            type: number
+            description: 长度
+          width:
+            type: number
+            description: 宽度
+          height:
+            type: number
+            description: 高度
+          lengthUnit:
+            type: string
+            description: 长度单位
+            enum:
+              - cm
+              - m
+          weight:
+            type: number
+            description: 重量
+          weightUnit:
+            type: string
+            description: 重量单位
+            enum:
+              - kg
+              - g
+  perItemWeight:
+    type: number
+    description: 单品重量
+  perItemWeightUnit:
+    type: string
+    description: 单品重量单位
+  totalWeight:
+    type: number
+    description: 总重量
+  manufactureDate:
+    type: string
+    format: date
+    description: 生产日期
+  bestBeforeDate:
+    type: string
+    format: date
+    description: 最佳风味期限
+  lotNumber:
+    type: string
+    description: 批次号
+  shipName:
+    type: string
+    description: 船名
+  inboundQuantity:
+    type: integer
+    description: 入库数量
+  leftQuantity:
+    type: integer
+    description: 剩余数量
+  leftSubQuantity:
+    type: integer
+    description: 剩余子件数

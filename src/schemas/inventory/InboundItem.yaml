@@ -1,0 +1,43 @@
+type: object
+properties:
+  id:
+    type: integer
+    description: 入库物品ID
+  inboundId:
+    type: integer
+    description: 入库记录ID
+  product:
+    type: object
+    properties:
+      id:
+        type: integer
+        description: 商品ID
+      name:
+        type: string
+        description: 商品名称
+  quantity:
+    type: integer
+    description: 入库数量
+  perItemWeight:
+    type: number
+    description: 单品重量
+  perItemWeightUnit:
+    type: string
+    description: 单品重量单位
+  totalWeight:
+    type: number
+    description: 总重量
+  manufactureDate:
+    type: string
+    format: date
+    description: 生产日期
+  bestBeforeDate:
+    type: string
+    format: date
+    description: 最佳风味期限
+  lotNumber:
+    type: string
+    description: 批次号
+  shipName:
+    type: string
+    description: 船名

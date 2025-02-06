@@ -1,0 +1,20 @@
+post:
+  summary: 确认入库单
+  operationId: approveInbound
+  tags:
+    - 库存
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: integer
+        format: int32
+        description: 入库单ID
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: '../../index.yaml#/components/schemas/Inbound'

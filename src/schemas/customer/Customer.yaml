@@ -2,20 +2,21 @@ type: object
 properties:
   id:
     type: integer
-    description: 仓库ID
-
+    description: 客户ID
   name:
     type: string
-    description: 仓库名称
-
+    description: 客户名
   tel:
     type: string
     description: 电话
-
   fax:
     type: string
     description: 传真
-
   address:
     $ref: '../../index.yaml#/components/schemas/Address'
-    description: 仓库地址
+    description: 地址
+  contacts:
+    type: array
+    items:
+      $ref: '../../index.yaml#/components/schemas/CustomerContact'
+    description: 联系人列表

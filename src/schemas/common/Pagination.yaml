@@ -15,7 +15,3 @@ properties:
       totalPages:
         type: integer
         description: 总页数
-    required:
-      - page
-      - itemsPerPage
-      - totalItems

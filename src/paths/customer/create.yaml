@@ -1,0 +1,18 @@
+post:
+  summary: 创建客户
+  operationId: createCustomer
+  tags:
+    - 客户
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: '../../index.yaml#/components/schemas/CreateCustomerReq'
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: '../../index.yaml#/components/schemas/CreateCustomerResp'
