@@ -19,6 +19,10 @@ paths:
   # 仓库接口
   /warehouse:
     $ref: './paths/warehouse/create.yaml'
+  /warehouse/{id}:
+    $ref: './paths/warehouse/id.yaml'
+  /warehouses:
+    $ref: './paths/warehouse/list.yaml'
 
 components:
   securitySchemes:
@@ -38,6 +42,8 @@ components:
     # 通用
     Address:
       $ref: './schemas/common/Address.yaml'
+    Pagination:
+      $ref: './schemas/common/Pagination.yaml'
     # 仓库
     Warehouse:
       $ref: './schemas/warehouse/Warehouse.yaml'
@@ -45,3 +51,7 @@ components:
       $ref: './schemas/warehouse/CreateWarehouseReq.yaml'
     CreateWarehouseResp:
       $ref: './schemas/warehouse/CreateWarehouseResp.yaml'
+    GetWarehouseResp:
+      $ref: './schemas/warehouse/GetWarehouseResp.yaml'
+    ListWarehousesResp:
+      $ref: './schemas/warehouse/ListWarehousesResp.yaml'

@@ -1,0 +1,12 @@
+{
+  "include": [
+    "gen/**/*.ts"
+  ],
+  "compilerOptions": {
+    "lib": [
+      "esnext",
+      "dom",
+      "dom.iterable"
+    ]
+  }
+}

@@ -3,10 +3,12 @@
   "version": "1.0.0",
   "description": "Swagger definition of Warehouse project",
   "scripts": {
-    "gen-swagger": "swagger-cli bundle -t yaml -o gen/api.yaml src/index.yaml"
+    "gen-swagger": "swagger-cli bundle -t yaml -o gen/api.yaml src/index.yaml",
+    "gen-ts": "swagger-typescript-api -p gen/api.yaml -o gen/api"
   },
   "private": true,
   "dependencies": {
-    "swagger-cli": "^4.0.4"
+    "swagger-cli": "^4.0.4",
+    "swagger-typescript-api": "^13.0.23"
   }
 }

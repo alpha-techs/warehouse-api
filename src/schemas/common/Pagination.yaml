@@ -1,0 +1,21 @@
+type: object
+properties:
+  pagination:
+    type: object
+    properties:
+      page:
+        type: integer
+        description: 页码
+      itemsPerPage:
+        type: integer
+        description: 每页数量
+      totalItems:
+        type: integer
+        description: 总数量
+      totalPages:
+        type: integer
+        description: 总页数
+    required:
+      - page
+      - itemsPerPage
+      - totalItems

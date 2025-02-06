@@ -1,0 +1,67 @@
+get:
+  summary: 获取指定的仓库详情
+  operationId: getWarehouse
+  tags:
+    - 仓库
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: integer
+        format: int32
+        description: 仓库 ID
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: '../../index.yaml#/components/schemas/GetWarehouseResp'
+
+put:
+  summary: 更新指定的仓库
+  operationId: updateWarehouse
+  tags:
+    - 仓库
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: integer
+        format: int32
+        description: 仓库 ID
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '../../index.yaml#/components/schemas/Warehouse'
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: '../../index.yaml#/components/schemas/GetWarehouseResp'
+
+delete:
+  summary: 删除指定的仓库
+  operationId: deleteWarehouse
+  tags:
+    - 仓库
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: integer
+        format: int32
+        description: 仓库 ID
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            type: object

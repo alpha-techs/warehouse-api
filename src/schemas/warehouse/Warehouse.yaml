@@ -1,11 +1,11 @@
-type: Object
+type: object
 properties:
   id:
-    type: Integer
+    type: integer
     description: 仓库ID
 
   name:
-    type: String
+    type: string
     description: 仓库名称
 
   address:
