@@ -41,9 +41,12 @@ properties:
         enum:
           - cm
           - m
-      weight:
+      unitWeight:
         type: number
-        description: 重量
+        description: 单件重量
+      totalWeight:
+        type: number
+        description: 总重量
       weightUnit:
         type: string
         description: 重量单位
