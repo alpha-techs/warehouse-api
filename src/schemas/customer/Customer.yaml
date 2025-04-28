@@ -15,8 +15,5 @@ properties:
   address:
     $ref: '../../index.yaml#/components/schemas/Address'
     description: 地址
-  contacts:
-    type: array
-    items:
-      $ref: '../../index.yaml#/components/schemas/CustomerContact'
-    description: 联系人列表
+  contact:
+    $ref: '../../index.yaml#/components/schemas/CustomerContact'

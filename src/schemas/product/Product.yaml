@@ -39,6 +39,7 @@ properties:
         type: string
         description: 长度单位
         enum:
+          - mm
           - cm
           - m
       unitWeight:
