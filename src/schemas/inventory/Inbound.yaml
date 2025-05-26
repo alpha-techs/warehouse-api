@@ -31,15 +31,6 @@ properties:
       name:
         type: string
         description: 客户名称
-  customerContact:
-    type: object
-    properties:
-      id:
-        type: integer
-        description: 客户联系人ID
-      name:
-        type: string
-        description: 客户联系人名称
   items:
     type: array
     description: 入库物品列表

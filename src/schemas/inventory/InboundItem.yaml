@@ -6,6 +6,30 @@ properties:
   inboundId:
     type: integer
     description: 入库记录ID
+  inbound:
+    type: object
+    properties:
+      id:
+        type: integer
+        description: 入库记录ID
+      inboundOrderId:
+        type: string
+        description: 入库订单ID
+      inboundDate:
+        type: string
+        description: 入库日期
+      warehouse:
+        type: object
+        properties:
+          id:
+            type: integer
+            description: 仓库ID
+          name:
+            type: string
+            description: 仓库名称
+  productId:
+    type: integer
+    description: 商品ID
   product:
     type: object
     properties:

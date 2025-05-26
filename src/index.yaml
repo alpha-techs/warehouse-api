@@ -40,7 +40,7 @@ paths:
   /customer/{id}:
     $ref: './paths/customer/id.yaml'
 
-  # 库存接口
+  # 入库
   /inventory/inbounds:
     $ref: './paths/inventory/inboundList.yaml'
   /inventory/inbound:
@@ -53,7 +53,10 @@ paths:
     $ref: './paths/inventory/inboundReject.yaml'
   /inventory/inbound/{id}/cancel:
     $ref: './paths/inventory/inboundCancel.yaml'
+  /inventory/inboundItems:
+    $ref: './paths/inventory/inboundItemList.yaml'
 
+  # 出库
   /inventory/outbounds:
     $ref: './paths/inventory/outboundList.yaml'
   /inventory/outbound:
@@ -67,6 +70,7 @@ paths:
   /inventory/outbound/{id}/cancel:
     $ref: './paths/inventory/outboundCancel.yaml'
 
+  # 在库
   /inventory/list:
     $ref: './paths/inventory/list.yaml'
 
@@ -138,6 +142,8 @@ components:
       $ref: './schemas/inventory/Inbound.yaml'
     ListInboundsResp:
       $ref: './schemas/inventory/ListInboundsResp.yaml'
+    ListInboundItemsResp:
+      $ref: './schemas/inventory/ListInboundItemsResp.yaml'
     InboundItem:
       $ref: './schemas/inventory/InboundItem.yaml'
     Outbound:
