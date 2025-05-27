@@ -1,15 +1,15 @@
 get:
-  summary: 获取客户详情
-  operationId: getCustomer
+  summary: 获取集装箱详情
+  operationId: getContainer
   tags:
-    - 客户
+    - 集装箱
   parameters:
     - name: id
       in: path
       required: true
       schema:
         type: integer
-        description: 客户ID
+        description: 集装箱ID
   responses:
     '200':
       description: 成功
@@ -19,43 +19,43 @@ get:
             $ref: '../../index.yaml#/components/schemas/GetCustomerResp'
 
 put:
-  summary: 更新客户
-  operationId: updateCustomer
+  summary: 更新集装箱
+  operationId: updateContainer
   tags:
-    - 客户
+    - 集装箱
   parameters:
     - name: id
       in: path
       required: true
       schema:
         type: integer
-        description: 客户ID
+        description: 集装箱ID
   requestBody:
     required: true
     content:
       application/json:
         schema:
-          $ref: '../../index.yaml#/components/schemas/Customer'
+          $ref: '../../index.yaml#/components/schemas/Container'
   responses:
     '200':
       description: 成功
       content:
         application/json:
           schema:
-            $ref: '../../index.yaml#/components/schemas/GetCustomerResp'
+            $ref: '../../index.yaml#/components/schemas/GetContainerResp'
 
 delete:
-  summary: 删除客户
-  operationId: deleteCustomer
+  summary: 删除集装箱
+  operationId: deleteContainer
   tags:
-    - 客户
+    - 集装箱
   parameters:
     - name: id
       in: path
       required: true
       schema:
         type: integer
-        description: 客户ID
+        description: 集装箱ID
   responses:
     '200':
       description: 成功

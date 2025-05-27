@@ -1,0 +1,22 @@
+type: object
+properties:
+  id:
+    type: integer
+    description: 集装箱货物ID
+  containerId:
+    type: integer
+    description: 集装箱ID
+  productId:
+    type: integer
+    description: 货物ID
+  quantity:
+    type: integer
+    description: 数量
+  manufactureDate:
+    type: string
+    format: date
+    description: 生产日期
+  bestBeforeDate:
+    type: string
+    format: date
+    description: 最佳风味期限

@@ -74,6 +74,14 @@ paths:
   /inventory/list:
     $ref: './paths/inventory/list.yaml'
 
+  # 集装箱
+  /container/list:
+    $ref: './paths/container/list.yaml'
+  /container/create:
+    $ref: './paths/container/create.yaml'
+  /container/{id}:
+    $ref: './paths/container/id.yaml'
+
 components:
   securitySchemes:
     # 这里是swagger-codegen已知问题的workaround，实际不需要oauth2认证
@@ -152,3 +160,16 @@ components:
       $ref: './schemas/inventory/ListOutboundsResp.yaml'
     OutboundItem:
       $ref: './schemas/inventory/OutboundItem.yaml'
+    # 集装箱
+    Container:
+      $ref: './schemas/container/Container.yaml'
+    ContainerItem:
+      $ref: './schemas/container/ContainerItem.yaml'
+    ListContainersResp:
+      $ref: './schemas/container/ListContainersResp.yaml'
+    CreateContainerReq:
+      $ref: './schemas/container/CreateContainerReq.yaml'
+    CreateContainerResp:
+      $ref: './schemas/container/CreateContainerResp.yaml'
+    GetContainerResp:
+      $ref: './schemas/container/GetContainerResp.yaml'

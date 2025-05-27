@@ -1,0 +1,46 @@
+get:
+  summary: 获取集装箱列表
+  operationId: listContainers
+  tags:
+    - 集装箱
+  parameters:
+    - name: page
+      in: query
+      description: 页码
+      schema:
+        type: integer
+        default: 1
+    - name: itemsPerPage
+      in: query
+      description: 每页数量
+      schema:
+        type: integer
+        default: 20
+    - name: containerNumber
+      in: query
+      description: 集装箱号
+      schema:
+        type: string
+    - name: statuses[]
+      in: query
+      description: 集装箱状态
+      schema:
+        type: array
+        items:
+          type: string
+          enum:
+            - shipping
+            - arrived
+            - customsClearance
+            - discharging
+            - discharged
+            - empty
+            - returned
+            - canceled
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: '../../index.yaml#/components/schemas/ListContainersResp'

@@ -1,0 +1,67 @@
+type: object
+properties:
+  id:
+    type: integer
+    description: 集装箱ID
+  containerNumber:
+    type: string
+    description: 集装箱号
+  shippingLine:
+    type: string
+    description: 船公司
+  vesselName:
+    type: string
+    description: 船名
+  voyageNumber:
+    type: string
+    description: 航次号
+  arrivalDate:
+    type: string
+    format: date
+    description: 到港日期
+  clearanceDate:
+    type: string
+    format: date
+    description: 清关日期
+  dischargeDate:
+    type: string
+    format: date
+    description: 卸货日期
+  returnDate:
+    type: string
+    format: date
+    description: 空箱归还日期
+  items:
+    type: array
+    description: 集装箱物品列表
+    items:
+      $ref: '../../index.yaml#/components/schemas/ContainerItem'
+  status:
+    type: string
+    enum:
+      - shipping
+      - arrived
+      - customsClearance
+      - discharging
+      - discharged
+      - empty
+      - returned
+      - canceled
+    description: >
+      集装箱状态
+
+      shipping: 在途
+
+      arrived: 已到港
+
+      customsClearance: 清关中
+
+      discharging: 卸货中
+
+      discharged: 已卸货
+
+      empty: 空箱
+
+      returned: 已归还
+
+      canceled: 已取消

@@ -1,0 +1,19 @@
+post:
+  summary: 创建集装箱
+  operationId: createContainer
+  tags:
+    - 集装箱
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: '../../index.yaml#/components/schemas/CreateContainerReq'
+
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: '../../index.yaml#/components/schemas/CreateContainerResp'
