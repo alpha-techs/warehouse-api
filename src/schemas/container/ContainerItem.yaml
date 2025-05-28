@@ -6,9 +6,20 @@ properties:
   containerId:
     type: integer
     description: 集装箱ID
+  container:
+    $ref: './Container.yaml'
   productId:
     type: integer
     description: 货物ID
+  product:
+    type: object
+    properties:
+      id:
+        type: integer
+        description: 商品ID
+      name:
+        type: string
+        description: 商品名称
   quantity:
     type: integer
     description: 数量

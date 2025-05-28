@@ -75,9 +75,9 @@ paths:
     $ref: './paths/inventory/list.yaml'
 
   # 集装箱
-  /container/list:
+  /containers:
     $ref: './paths/container/list.yaml'
-  /container/create:
+  /container:
     $ref: './paths/container/create.yaml'
   /container/{id}:
     $ref: './paths/container/id.yaml'
