@@ -69,6 +69,8 @@ paths:
     $ref: './paths/inventory/outboundReject.yaml'
   /inventory/outbound/{id}/cancel:
     $ref: './paths/inventory/outboundCancel.yaml'
+  /inventory/outboundItems:
+    $ref: './paths/inventory/outboundItemList.yaml'
 
   # 在库
   /inventory/list:
@@ -158,6 +160,8 @@ components:
       $ref: './schemas/inventory/Outbound.yaml'
     ListOutboundsResp:
       $ref: './schemas/inventory/ListOutboundsResp.yaml'
+    ListOutboundItemsResp:
+      $ref: './schemas/inventory/ListOutboundItemsResp.yaml'
     OutboundItem:
       $ref: './schemas/inventory/OutboundItem.yaml'
     # 集装箱
