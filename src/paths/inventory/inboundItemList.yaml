@@ -21,6 +21,23 @@ get:
       description: 批次号
       schema:
         type: string
+    - name: productId
+      in: query
+      description: 商品ID
+      schema:
+        type: integer
+    - name: inboundDateFrom
+      in: query
+      description: 入库日期(From)
+      schema:
+        type: string
+        format: date
+    - name: inboundDateTo
+      in: query
+      description: 入库日期(To)
+      schema:
+        type: string
+        format: date
   responses:
     '200':
       description: 成功
