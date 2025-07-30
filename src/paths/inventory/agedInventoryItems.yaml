@@ -1,0 +1,12 @@
+get:
+  summary: 获取库存过久商品列表
+  operationId: getAgedInventoryItemList
+  tags:
+    - 仪表盘
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: '../../index.yaml#/components/schemas/AgedInventoryItemListResp'

@@ -1,0 +1,26 @@
+type: object
+properties:
+  totalInventoryCount:
+    type: integer
+    description: 总库存数量
+  monthlyInboundCount:
+    type: integer
+    description: 本月入库数量
+  monthlyOutboundCount:
+    type: integer
+    description: 本月出库数量
+  pendingInboundCount:
+    type: integer
+    description: 待处理入库单数量
+  pendingOutboundCount:
+    type: integer
+    description: 待处理出库单数量
+  warehouseCount:
+    type: integer
+    description: 仓库数量
+  customerCount:
+    type: integer
+    description: 客户数量
+  productCount:
+    type: integer
+    description: 商品数量

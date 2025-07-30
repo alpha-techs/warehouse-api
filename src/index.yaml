@@ -16,6 +16,10 @@ security:
   - bearerAuth: []
 
 paths:
+  # 仪表盘
+  /dashboard/stats:
+    $ref: './paths/dashboard/stats.yaml'
+
   # 仓库接口
   /warehouses:
     $ref: './paths/warehouse/list.yaml'
@@ -77,6 +81,10 @@ paths:
     $ref: './paths/inventory/list.yaml'
   /inventory/item/{id}:
     $ref: './paths/inventory/detail.yaml'
+  /inventory/agedItems:
+    $ref: './paths/inventory/agedInventoryItems.yaml'
+  /inventory/agedItems/{id}/mute:
+    $ref: './paths/inventory/muteAgedInventoryItem.yaml'
 
   # 集装箱
   /containers:
@@ -106,6 +114,11 @@ components:
       $ref: './schemas/common/Address.yaml'
     Pagination:
       $ref: './schemas/common/Pagination.yaml'
+    # 仪表盘
+    DashboardStats:
+      $ref: './schemas/dashboard/DashboardStats.yaml'
+    DashboardStatsResp:
+      $ref: './schemas/dashboard/DashboardStatsResp.yaml'
     # 仓库
     Warehouse:
       $ref: './schemas/warehouse/Warehouse.yaml'
@@ -148,6 +161,8 @@ components:
       $ref: './schemas/inventory/InventoryItem.yaml'
     InventoryItemDetailResp:
       $ref: './schemas/inventory/InventoryItemDetailResp.yaml'
+    AgedInventoryItemListResp:
+      $ref: './schemas/inventory/AgedInventoryItemListResp.yaml'
     ListInventoryResp:
       $ref: './schemas/inventory/ListInventoryResp.yaml'
     StorageFeePlan:

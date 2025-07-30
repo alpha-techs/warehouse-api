@@ -104,3 +104,6 @@ properties:
   leftSubQuantity:
     type: integer
     description: 剩余子件数
+  muted:
+    type: boolean
+    description: 是否静音
