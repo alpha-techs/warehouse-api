@@ -1,0 +1,10 @@
+allOf:
+  - $ref: '../../index.yaml#/components/schemas/InventoryItem'
+  - type: object
+    properties:
+      inboundItem:
+        $ref: '../../index.yaml#/components/schemas/InboundItem'
+      outboundItems:
+        type: array
+        items:
+          $ref: '../../index.yaml#/components/schemas/OutboundItem'

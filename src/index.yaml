@@ -75,6 +75,8 @@ paths:
   # 在库
   /inventory/list:
     $ref: './paths/inventory/list.yaml'
+  /inventory/item/{id}:
+    $ref: './paths/inventory/detail.yaml'
 
   # 集装箱
   /containers:
@@ -144,6 +146,8 @@ components:
     # 库存
     InventoryItem:
       $ref: './schemas/inventory/InventoryItem.yaml'
+    InventoryItemDetailResp:
+      $ref: './schemas/inventory/InventoryItemDetailResp.yaml'
     ListInventoryResp:
       $ref: './schemas/inventory/ListInventoryResp.yaml'
     StorageFeePlan:

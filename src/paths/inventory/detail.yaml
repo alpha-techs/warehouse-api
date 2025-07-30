@@ -1,0 +1,19 @@
+get:
+  summary: 获取库存物品详情
+  operationId: getInventoryItemDetail
+  tags:
+    - 库存
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: integer
+        description: 库存物品ID
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: '../../index.yaml#/components/schemas/InventoryItemDetailResp'
