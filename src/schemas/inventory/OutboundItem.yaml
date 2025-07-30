@@ -6,6 +6,37 @@ properties:
   outboundId:
     type: integer
     description: 出库记录ID
+  outbound:
+    type: object
+    properties:
+      id:
+        type: integer
+        description: 出库记录ID
+      outboundOrderId:
+        type: string
+        description: 出库订单ID
+      outboundDate:
+        type: string
+        format: date
+        description: 出库日期
+      warehouse:
+        type: object
+        properties:
+          id:
+            type: integer
+            description: 仓库ID
+          name:
+            type: string
+            description: 仓库名称
+      customer:
+        type: object
+        properties:
+          id:
+            type: integer
+            description: 客户ID
+          name:
+            type: string
+            description: 客户名称
   inboundItemId:
     type: integer
     description: 入库物品ID
