@@ -1,0 +1,14 @@
+type: object
+properties:
+  inboundId:
+    type: integer
+    description: 入库记录ID
+  format:
+    type: string
+    description: 报告格式
+    enum:
+      - pdf
+      - excel
+    default: pdf
+required:
+  - inboundId

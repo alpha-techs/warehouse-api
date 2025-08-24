@@ -1,0 +1,27 @@
+post:
+  summary: 生成入库报告
+  operationId: generateInboundReport
+  tags:
+    - 入库报告
+  description: |
+    生成指定入库记录的入库报告PDF/Excel。
+    报告将异步生成，返回报告ID用于查询生成状态和下载。
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: '../../index.yaml#/components/schemas/InboundReportReq'
+  responses:
+    '202':
+      description: 入库报告生成任务已接受
+      content:
+        application/json:
+          schema:
+            $ref: '../../index.yaml#/components/schemas/InboundReportResp'
+    '400':
+      description: 请求参数错误
+    '404':
+      description: 入库记录不存在
+    '500':
+      description: 服务器内部错误

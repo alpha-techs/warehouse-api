@@ -96,6 +96,16 @@ paths:
   /inventory/reports/{reportId}/download:
     $ref: './paths/inventory/reportDownload.yaml'
 
+  # 入库报告
+  /inventory/inboundReports:
+    $ref: './paths/inventory/inboundReportList.yaml'
+  /inventory/inboundReport/generate:
+    $ref: './paths/inventory/generateInboundReport.yaml'
+  /inventory/inboundReports/{reportId}/status:
+    $ref: './paths/inventory/inboundReportStatus.yaml'
+  /inventory/inboundReports/{reportId}/download:
+    $ref: './paths/inventory/inboundReportDownload.yaml'
+
   # 集装箱
   /containers:
     $ref: './paths/container/list.yaml'
@@ -202,6 +212,15 @@ components:
       $ref: './schemas/inventory/InventoryReport.yaml'
     InventoryReportListResp:
       $ref: './schemas/inventory/InventoryReportListResp.yaml'
+    # 入库报告
+    InboundReportReq:
+      $ref: './schemas/inventory/InboundReportReq.yaml'
+    InboundReportResp:
+      $ref: './schemas/inventory/InboundReportResp.yaml'
+    InboundReport:
+      $ref: './schemas/inventory/InboundReport.yaml'
+    InboundReportListResp:
+      $ref: './schemas/inventory/InboundReportListResp.yaml'
     # 集装箱
     Container:
       $ref: './schemas/container/Container.yaml'
