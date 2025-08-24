@@ -1,0 +1,31 @@
+type: object
+properties:
+  reportId:
+    type: string
+    description: 出库报告ID
+  reportDate:
+    type: string
+    format: date-time
+    description: 报告生成时间
+  warehouse:
+    type: object
+    properties:
+      id:
+        type: integer
+        description: 仓库ID
+      name:
+        type: string
+        description: 仓库名称
+  customer:
+    type: object
+    properties:
+      id:
+        type: integer
+        description: 客户ID
+      name:
+        type: string
+        description: 客户名称
+  expiresAt:
+    type: string
+    format: date-time
+    description: 下载链接过期时间
