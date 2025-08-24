@@ -1,0 +1,21 @@
+post:
+  summary: 生成在库报告
+  operationId: generateInventoryReport
+  tags:
+    - 库存报告
+  description: |
+    生成指定仓库和客户的在库报告PDF。
+    报告将异步生成，返回报告ID用于查询生成状态和下载。
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: '../../index.yaml#/components/schemas/InventoryReportReq'
+  responses:
+    '202':
+      description: 报告生成任务已接受
+      content:
+        application/json:
+          schema:
+            $ref: '../../index.yaml#/components/schemas/InventoryReportResp'

@@ -1,0 +1,59 @@
+type: object
+properties:
+  id:
+    type: string
+    description: 报告ID
+  warehouse:
+    type: object
+    properties:
+      id:
+        type: integer
+        description: 仓库ID
+      name:
+        type: string
+        description: 仓库名称
+  customer:
+    type: object
+    properties:
+      id:
+        type: integer
+        description: 客户ID
+      name:
+        type: string
+        description: 客户名称
+  reportDate:
+    type: string
+    format: date
+    description: 报告日期
+  format:
+    type: string
+    description: 报告格式
+    enum:
+      - pdf
+      - excel
+  status:
+    type: string
+    description: 报告状态
+    enum:
+      - pending    # 等待生成
+      - processing # 生成中
+      - completed  # 生成完成
+      - failed     # 生成失败
+  downloadUrl:
+    type: string
+    description: 报告下载URL（仅在completed状态时提供）
+  errorMessage:
+    type: string
+    description: 错误信息（仅在failed状态时提供）
+  createdAt:
+    type: string
+    format: date-time
+    description: 报告创建时间
+  completedAt:
+    type: string
+    format: date-time
+    description: 报告完成时间
+  expiresAt:
+    type: string
+    format: date-time
+    description: 下载链接过期时间

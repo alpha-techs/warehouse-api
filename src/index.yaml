@@ -86,6 +86,16 @@ paths:
   /inventory/agedItems/{id}/mute:
     $ref: './paths/inventory/muteAgedInventoryItem.yaml'
 
+  # 在库报告
+  /inventory/reports:
+    $ref: './paths/inventory/reportList.yaml'
+  /inventory/report/generate:
+    $ref: './paths/inventory/generateReport.yaml'
+  /inventory/reports/{reportId}/status:
+    $ref: './paths/inventory/reportStatus.yaml'
+  /inventory/reports/{reportId}/download:
+    $ref: './paths/inventory/reportDownload.yaml'
+
   # 集装箱
   /containers:
     $ref: './paths/container/list.yaml'
@@ -183,6 +193,15 @@ components:
       $ref: './schemas/inventory/ListOutboundItemsResp.yaml'
     OutboundItem:
       $ref: './schemas/inventory/OutboundItem.yaml'
+    # 在库报告
+    InventoryReportReq:
+      $ref: './schemas/inventory/InventoryReportReq.yaml'
+    InventoryReportResp:
+      $ref: './schemas/inventory/InventoryReportResp.yaml'
+    InventoryReport:
+      $ref: './schemas/inventory/InventoryReport.yaml'
+    InventoryReportListResp:
+      $ref: './schemas/inventory/InventoryReportListResp.yaml'
     # 集装箱
     Container:
       $ref: './schemas/container/Container.yaml'

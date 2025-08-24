@@ -1,0 +1,18 @@
+type: object
+properties:
+  warehouseId:
+    type: integer
+    description: 仓库ID
+  customerId:
+    type: integer
+    description: 客户ID
+  format:
+    type: string
+    description: 报告格式
+    enum:
+      - pdf
+      - excel
+    default: pdf
+required:
+  - warehouseId
+  - customerId

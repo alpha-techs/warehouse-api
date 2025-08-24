@@ -1,0 +1,43 @@
+get:
+  summary: 下载在库报告
+  operationId: downloadInventoryReport
+  tags:
+    - 库存报告
+  description: |
+    下载已生成的在库报告文件。
+    支持PDF和Excel格式的报告下载。
+  parameters:
+    - name: reportId
+      in: path
+      required: true
+      description: 报告ID
+      schema:
+        type: string
+  responses:
+    '200':
+      description: 成功下载报告文件
+      content:
+        application/pdf:
+          schema:
+            type: string
+            format: binary
+          examples:
+            pdf_report:
+              summary: PDF格式报告
+        application/vnd.openxmlformats-officedocument.spreadsheetml.sheet:
+          schema:
+            type: string
+            format: binary
+          examples:
+            excel_report:
+              summary: Excel格式报告
+      headers:
+        Content-Disposition:
+          description: 文件下载附件头
+          schema:
+            type: string
+            example: 'attachment; filename="inventory_report_20240115.pdf"'
+        Content-Length:
+          description: 文件大小
+          schema:
+            type: integer

@@ -1,0 +1,22 @@
+get:
+  summary: 获取报告生成状态
+  operationId: getInventoryReportStatus
+  tags:
+    - 库存报告
+  description: |
+    根据报告ID获取在库报告的生成状态。
+    可用于轮询检查报告是否生成完成。
+  parameters:
+    - name: reportId
+      in: path
+      required: true
+      description: 报告ID
+      schema:
+        type: string
+  responses:
+    '200':
+      description: 成功获取报告状态
+      content:
+        application/json:
+          schema:
+            $ref: '../../index.yaml#/components/schemas/InventoryReport'
