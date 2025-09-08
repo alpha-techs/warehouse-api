@@ -1,0 +1,50 @@
+type: object
+properties:
+  id:
+    type: integer
+    description: 名义变更记录ID
+  nameChangeOrderId:
+    type: string
+    description: 名义变更订单ID
+  nameChangeDate:
+    type: string
+    format: date
+    description: 名义变更日期
+  nameChangeTime:
+    type: string
+    description: 名义变更时间
+  warehouse:
+    type: object
+    properties:
+      id:
+        type: integer
+        description: 仓库ID
+      name:
+        type: string
+        description: 仓库名称
+  customer:
+    type: object
+    properties:
+      id:
+        type: integer
+        description: 客户ID
+      name:
+        type: string
+        description: 客户名称
+  customerContactId:
+    type: integer
+    description: 客户联系人ID
+  items:
+    type: array
+    description: 名义变更物品列表
+    items:
+      $ref: '../../index.yaml#/components/schemas/NameChangeItem'
+  status:
+    type: string
+    description: 名义变更状态
+    enum:
+      - draft
+      - pending
+      - approved
+      - rejected
+      - cancelled

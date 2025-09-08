@@ -116,6 +116,32 @@ paths:
   /inventory/outboundReports/{reportId}/download:
     $ref: './paths/inventory/outboundReportDownload.yaml'
 
+  # 名义变更
+  /inventory/nameChanges:
+    $ref: './paths/inventory/nameChangeList.yaml'
+  /inventory/nameChange:
+    $ref: './paths/inventory/nameChange.yaml'
+  /inventory/nameChange/{id}:
+    $ref: './paths/inventory/nameChangeId.yaml'
+  /inventory/nameChange/{id}/approve:
+    $ref: './paths/inventory/nameChangeApprove.yaml'
+  /inventory/nameChange/{id}/reject:
+    $ref: './paths/inventory/nameChangeReject.yaml'
+  /inventory/nameChange/{id}/cancel:
+    $ref: './paths/inventory/nameChangeCancel.yaml'
+  /inventory/nameChangeItems:
+    $ref: './paths/inventory/nameChangeItemList.yaml'
+
+  # 名义变更报告
+  /inventory/nameChangeReports:
+    $ref: './paths/inventory/nameChangeReportList.yaml'
+  /inventory/nameChangeReport/generate:
+    $ref: './paths/inventory/generateNameChangeReport.yaml'
+  /inventory/nameChangeReports/{reportId}/status:
+    $ref: './paths/inventory/nameChangeReportStatus.yaml'
+  /inventory/nameChangeReports/{reportId}/download:
+    $ref: './paths/inventory/nameChangeReportDownload.yaml'
+
   # 集装箱
   /containers:
     $ref: './paths/container/list.yaml'
@@ -240,6 +266,24 @@ components:
       $ref: './schemas/inventory/OutboundReport.yaml'
     OutboundReportListResp:
       $ref: './schemas/inventory/OutboundReportListResp.yaml'
+    # 名义变更
+    NameChange:
+      $ref: './schemas/inventory/NameChange.yaml'
+    ListNameChangesResp:
+      $ref: './schemas/inventory/ListNameChangesResp.yaml'
+    ListNameChangeItemsResp:
+      $ref: './schemas/inventory/ListNameChangeItemsResp.yaml'
+    NameChangeItem:
+      $ref: './schemas/inventory/NameChangeItem.yaml'
+    # 名义变更报告
+    NameChangeReportReq:
+      $ref: './schemas/inventory/NameChangeReportReq.yaml'
+    NameChangeReportResp:
+      $ref: './schemas/inventory/NameChangeReportResp.yaml'
+    NameChangeReport:
+      $ref: './schemas/inventory/NameChangeReport.yaml'
+    NameChangeReportListResp:
+      $ref: './schemas/inventory/NameChangeReportListResp.yaml'
     # 集装箱
     Container:
       $ref: './schemas/container/Container.yaml'

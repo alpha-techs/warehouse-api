@@ -1,0 +1,8 @@
+allOf:
+  - $ref: '../../index.yaml#/components/schemas/Pagination'
+  - type: object
+    properties:
+      items:
+        type: array
+        items:
+          $ref: '../../index.yaml#/components/schemas/NameChangeReport'

@@ -8,3 +8,7 @@ allOf:
         type: array
         items:
           $ref: '../../index.yaml#/components/schemas/OutboundItem'
+      nameChangeItems:
+        type: array
+        items:
+          $ref: '../../index.yaml#/components/schemas/NameChangeItem'

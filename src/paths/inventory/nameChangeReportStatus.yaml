@@ -1,0 +1,26 @@
+get:
+  summary: 获取名义变更报告生成状态
+  operationId: getNameChangeReportStatus
+  tags:
+    - 名义变更报告
+  description: |
+    根据报告ID获取名义变更报告的生成状态。
+    可用于轮询检查报告是否生成完成。
+  parameters:
+    - name: reportId
+      in: path
+      required: true
+      description: 名义变更报告ID
+      schema:
+        type: string
+  responses:
+    '200':
+      description: 成功获取名义变更报告状态
+      content:
+        application/json:
+          schema:
+            $ref: '../../index.yaml#/components/schemas/NameChangeReport'
+    '404':
+      description: 报告不存在
+    '500':
+      description: 服务器内部错误

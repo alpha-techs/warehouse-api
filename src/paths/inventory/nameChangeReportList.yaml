@@ -1,0 +1,66 @@
+get:
+  summary: 获取名义变更报告列表
+  operationId: listNameChangeReports
+  tags:
+    - 名义变更报告
+  description: |
+    获取名义变更报告的历史列表，支持按仓库、客户等条件筛选。
+  parameters:
+    - name: page
+      in: query
+      description: 页码
+      schema:
+        type: integer
+        default: 1
+        minimum: 1
+    - name: itemsPerPage
+      in: query
+      description: 每页数量
+      schema:
+        type: integer
+        default: 20
+        minimum: 1
+        maximum: 100
+    - name: warehouseId
+      in: query
+      description: 仓库ID筛选
+      schema:
+        type: integer
+    - name: customerId
+      in: query
+      description: 客户ID筛选
+      schema:
+        type: integer
+    - name: status
+      in: query
+      description: 报告状态筛选
+      schema:
+        type: string
+        enum:
+          - pending
+          - processing
+          - completed
+          - failed
+    - name: startDate
+      in: query
+      description: 开始日期筛选（报告生成时间）
+      schema:
+        type: string
+        format: date
+    - name: endDate
+      in: query
+      description: 结束日期筛选（报告生成时间）
+      schema:
+        type: string
+        format: date
+  responses:
+    '200':
+      description: 成功获取名义变更报告列表
+      content:
+        application/json:
+          schema:
+            $ref: '../../index.yaml#/components/schemas/NameChangeReportListResp'
+    '400':
+      description: 请求参数错误
+    '500':
+      description: 服务器内部错误

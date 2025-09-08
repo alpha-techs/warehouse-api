@@ -1,0 +1,60 @@
+get:
+  summary: 名义变更单详情
+  operationId: getNameChange
+  tags:
+    - 库存
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: integer
+        format: int32
+        description: 名义变更单ID
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: '../../index.yaml#/components/schemas/NameChange'
+
+put:
+  summary: 更新名义变更单
+  operationId: updateNameChange
+  tags:
+    - 库存
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: integer
+        format: int32
+        description: 名义变更单ID
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: '../../index.yaml#/components/schemas/NameChange'
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: '../../index.yaml#/components/schemas/NameChange'
+delete:
+  summary: 删除名义变更单
+  operationId: deleteNameChange
+  tags:
+    - 库存
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: integer
+        format: int32
+        description: 名义变更单ID

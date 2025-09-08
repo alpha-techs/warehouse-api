@@ -1,0 +1,18 @@
+post:
+  summary: 创建名义变更单
+  operationId: createNameChange
+  tags:
+    - 库存
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: '../../index.yaml#/components/schemas/NameChange'
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: '../../index.yaml#/components/schemas/NameChange'

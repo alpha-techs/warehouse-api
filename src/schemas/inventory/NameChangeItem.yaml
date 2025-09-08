@@ -1,0 +1,114 @@
+type: object
+properties:
+  id:
+    type: integer
+    description: 名义变更物品ID
+  nameChangeId:
+    type: integer
+    description: 名义变更记录ID
+  nameChange:
+    type: object
+    properties:
+      id:
+        type: integer
+        description: 名义变更记录ID
+      nameChangeOrderId:
+        type: string
+        description: 名义变更订单ID
+      nameChangeDate:
+        type: string
+        format: date
+        description: 名义变更日期
+      warehouse:
+        type: object
+        properties:
+          id:
+            type: integer
+            description: 仓库ID
+          name:
+            type: string
+            description: 仓库名称
+      customer:
+        type: object
+        properties:
+          id:
+            type: integer
+            description: 客户ID
+          name:
+            type: string
+            description: 客户名称
+  inboundItemId:
+    type: integer
+    description: 入库物品ID
+  inventoryItemId:
+    type: integer
+    description: 库存物品ID
+  warehouse:
+    type: object
+    properties:
+      id:
+        type: integer
+        description: 仓库ID
+      name:
+        type: string
+        description: 仓库名称
+  customer:
+    type: object
+    properties:
+      id:
+        type: integer
+        description: 客户ID
+      name:
+        type: string
+        description: 客户名称
+  product:
+    type: object
+    properties:
+      id:
+        type: integer
+        description: 商品ID
+      name:
+        type: string
+        description: 商品名称
+      dimension:
+        type: object
+        properties:
+          description:
+            type: string
+            description: 尺寸描述
+          length:
+            type: number
+            description: 长度
+          width:
+            type: number
+            description: 宽度
+          height:
+            type: number
+            description: 高度
+          lengthUnit:
+            type: string
+            description: 长度单位
+            enum:
+              - cm
+              - m
+          weight:
+            type: number
+            description: 重量
+          weightUnit:
+            type: string
+            description: 重量单位
+            enum:
+              - kg
+              - g
+  lotNumber:
+    type: string
+    description: 批次号
+  inventoryQuantity:
+    type: integer
+    description: 库存数量
+  quantity:
+    type: integer
+    description: 名义变更数量
+  note:
+    type: string
+    description: 备注
