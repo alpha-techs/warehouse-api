@@ -153,6 +153,14 @@ paths:
     $ref: './paths/billing/invoiceIssue.yaml'
   /billing/invoice/{id}/cancel:
     $ref: './paths/billing/invoiceCancel.yaml'
+  /billing/invoicePrints:
+    $ref: './paths/billing/invoicePrintList.yaml'
+  /billing/invoicePrint/generate:
+    $ref: './paths/billing/generateInvoicePrint.yaml'
+  /billing/invoicePrints/{printId}/status:
+    $ref: './paths/billing/invoicePrintStatus.yaml'
+  /billing/invoicePrints/{printId}/download:
+    $ref: './paths/billing/invoicePrintDownload.yaml'
 
   # 集装箱
   /containers:
@@ -309,6 +317,14 @@ components:
       $ref: './schemas/billing/IssueInvoiceReq.yaml'
     CancelInvoiceReq:
       $ref: './schemas/billing/CancelInvoiceReq.yaml'
+    InvoicePrintReq:
+      $ref: './schemas/billing/InvoicePrintReq.yaml'
+    InvoicePrintResp:
+      $ref: './schemas/billing/InvoicePrintResp.yaml'
+    InvoicePrint:
+      $ref: './schemas/billing/InvoicePrint.yaml'
+    InvoicePrintListResp:
+      $ref: './schemas/billing/InvoicePrintListResp.yaml'
     # 集装箱
     Container:
       $ref: './schemas/container/Container.yaml'

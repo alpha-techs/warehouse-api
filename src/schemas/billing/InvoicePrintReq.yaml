@@ -1,0 +1,14 @@
+type: object
+properties:
+  invoiceId:
+    type: integer
+    description: 需要生成打印版的发票ID
+  format:
+    type: string
+    description: 打印文件格式
+    enum:
+      - excel
+    default: excel
+additionalProperties: false
+required:
+  - invoiceId

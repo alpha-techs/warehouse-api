@@ -1,0 +1,90 @@
+type: object
+properties:
+  id:
+    type: string
+    description: 发票打印任务ID
+  invoice:
+    type: object
+    description: 发票关键信息
+    properties:
+      id:
+        type: integer
+        description: 发票ID
+      invoiceNumber:
+        type: string
+        description: 发票编号
+      status:
+        type: string
+        description: 发票状态
+        enum:
+          - draft
+          - issued
+          - cancelled
+          - paid
+      customer:
+        type: object
+        description: 发票对应客户信息
+        properties:
+          id:
+            type: integer
+            description: 客户ID
+          name:
+            type: string
+            description: 客户名称
+        additionalProperties: false
+      dueDate:
+        type: string
+        format: date
+        description: 付款截止日期
+      issueDate:
+        type: string
+        format: date-time
+        description: 发票下发时间
+      currency:
+        type: string
+        description: 结算币种
+      subtotalAmount:
+        type: number
+        format: float
+        description: 商品小计金额
+      taxAmount:
+        type: number
+        format: float
+        description: 税额
+      totalAmount:
+        type: number
+        format: float
+        description: 总金额
+    additionalProperties: false
+  format:
+    type: string
+    description: 打印文件格式
+    enum:
+      - excel
+  status:
+    type: string
+    description: 打印任务状态
+    enum:
+      - pending
+      - processing
+      - completed
+      - failed
+  downloadUrl:
+    type: string
+    description: 下载链接（仅在completed状态时提供）
+  errorMessage:
+    type: string
+    description: 错误信息（仅在failed状态时提供）
+  createdAt:
+    type: string
+    format: date-time
+    description: 任务创建时间
+  completedAt:
+    type: string
+    format: date-time
+    description: 任务完成时间
+  expiresAt:
+    type: string
+    format: date-time
+    description: 下载链接过期时间
+additionalProperties: false

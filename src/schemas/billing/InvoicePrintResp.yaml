@@ -1,0 +1,34 @@
+type: object
+properties:
+  printId:
+    type: string
+    description: 打印任务ID
+  invoice:
+    type: object
+    description: 发票关键信息
+    properties:
+      id:
+        type: integer
+        description: 发票ID
+      invoiceNumber:
+        type: string
+        description: 发票编号
+      status:
+        type: string
+        description: 发票状态
+        enum:
+          - draft
+          - issued
+          - cancelled
+          - paid
+    additionalProperties: false
+  format:
+    type: string
+    description: 打印文件格式
+    enum:
+      - excel
+  expiresAt:
+    type: string
+    format: date-time
+    description: 下载链接过期时间
+additionalProperties: false
