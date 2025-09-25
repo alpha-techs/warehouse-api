@@ -142,6 +142,18 @@ paths:
   /inventory/nameChangeReports/{reportId}/download:
     $ref: './paths/inventory/nameChangeReportDownload.yaml'
 
+  # 发票
+  /billing/invoices:
+    $ref: './paths/billing/invoiceList.yaml'
+  /billing/invoice:
+    $ref: './paths/billing/invoice.yaml'
+  /billing/invoice/{id}:
+    $ref: './paths/billing/invoiceId.yaml'
+  /billing/invoice/{id}/issue:
+    $ref: './paths/billing/invoiceIssue.yaml'
+  /billing/invoice/{id}/cancel:
+    $ref: './paths/billing/invoiceCancel.yaml'
+
   # 集装箱
   /containers:
     $ref: './paths/container/list.yaml'
@@ -284,6 +296,19 @@ components:
       $ref: './schemas/inventory/NameChangeReport.yaml'
     NameChangeReportListResp:
       $ref: './schemas/inventory/NameChangeReportListResp.yaml'
+    # 发票
+    Invoice:
+      $ref: './schemas/billing/Invoice.yaml'
+    InvoiceLineItem:
+      $ref: './schemas/billing/InvoiceLineItem.yaml'
+    CreateInvoiceReq:
+      $ref: './schemas/billing/CreateInvoiceReq.yaml'
+    ListInvoicesResp:
+      $ref: './schemas/billing/ListInvoicesResp.yaml'
+    IssueInvoiceReq:
+      $ref: './schemas/billing/IssueInvoiceReq.yaml'
+    CancelInvoiceReq:
+      $ref: './schemas/billing/CancelInvoiceReq.yaml'
     # 集装箱
     Container:
       $ref: './schemas/container/Container.yaml'

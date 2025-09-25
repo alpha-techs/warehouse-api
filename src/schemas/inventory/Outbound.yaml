@@ -51,6 +51,24 @@ properties:
       - approved
       - rejected
       - cancelled
+  currency:
+    type: string
+    description: 结算币种，仅支持JPY
+    enum:
+      - JPY
+    default: JPY
+  subtotalAmount:
+    type: number
+    format: float
+    description: 商品小计金额
+  taxAmount:
+    type: number
+    format: float
+    description: 税额
+  totalAmount:
+    type: number
+    format: float
+    description: 总金额
   createdAt:
     type: string
     description: 创建时间

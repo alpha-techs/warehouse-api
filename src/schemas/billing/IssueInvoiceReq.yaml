@@ -1,0 +1,9 @@
+type: object
+properties:
+  issueDate:
+    type: string
+    format: date-time
+    description: 发票下发时间
+  message:
+    type: string
+    description: 下发时附带的消息

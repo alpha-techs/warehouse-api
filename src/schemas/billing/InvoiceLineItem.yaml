@@ -1,0 +1,48 @@
+type: object
+properties:
+  id:
+    type: integer
+    description: 发票明细ID
+  outboundId:
+    type: integer
+    description: 出库记录ID
+  outboundOrderId:
+    type: string
+    description: 出库订单编号
+  outboundDate:
+    type: string
+    format: date
+    description: 出库日期
+  product:
+    type: object
+    properties:
+      id:
+        type: integer
+        description: 商品ID
+      name:
+        type: string
+        description: 商品名称
+  quantity:
+    type: integer
+    description: 计费数量
+  unitPrice:
+    type: number
+    format: float
+    description: 计费单价
+  currency:
+    type: string
+    description: 结算币种，仅支持JPY
+    enum:
+      - JPY
+    default: JPY
+  lineAmount:
+    type: number
+    format: float
+    description: 行金额
+  taxAmount:
+    type: number
+    format: float
+    description: 行税额
+  note:
+    type: string
+    description: 备注

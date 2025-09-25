@@ -1,0 +1,70 @@
+type: object
+properties:
+  id:
+    type: integer
+    description: 发票ID
+  invoiceNumber:
+    type: string
+    description: 发票编号
+  status:
+    type: string
+    description: 发票状态
+    enum:
+      - draft
+      - issued
+      - cancelled
+      - paid
+  customer:
+    type: object
+    properties:
+      id:
+        type: integer
+        description: 客户ID
+      name:
+        type: string
+        description: 客户名称
+  dueDate:
+    type: string
+    format: date
+    description: 付款截止日期
+  issueDate:
+    type: string
+    format: date-time
+    description: 发票下发时间
+  currency:
+    type: string
+    description: 结算币种，仅支持JPY
+    enum:
+      - JPY
+    default: JPY
+  subtotalAmount:
+    type: number
+    format: float
+    description: 商品小计金额
+  taxAmount:
+    type: number
+    format: float
+    description: 税额
+  totalAmount:
+    type: number
+    format: float
+    description: 总金额
+  outboundId:
+    type: integer
+    description: 关联的出库单ID
+  items:
+    type: array
+    description: 发票明细行
+    items:
+      $ref: '../../index.yaml#/components/schemas/InvoiceLineItem'
+  notes:
+    type: string
+    description: 备注
+  createdAt:
+    type: string
+    format: date-time
+    description: 创建时间
+  updatedAt:
+    type: string
+    format: date-time
+    description: 更新时间

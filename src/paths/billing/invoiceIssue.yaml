@@ -1,0 +1,26 @@
+post:
+  summary: 下发发票
+  operationId: issueInvoice
+  tags:
+    - 结算
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: integer
+        format: int32
+        description: 发票ID
+  requestBody:
+    required: false
+    content:
+      application/json:
+        schema:
+          $ref: '../../index.yaml#/components/schemas/IssueInvoiceReq'
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: '../../index.yaml#/components/schemas/Invoice'

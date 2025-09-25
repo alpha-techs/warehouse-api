@@ -109,6 +109,24 @@ properties:
   quantity:
     type: integer
     description: 出库数量
+  unitPrice:
+    type: number
+    format: float
+    description: 商品单价
+  currency:
+    type: string
+    description: 结算币种，仅支持JPY
+    enum:
+      - JPY
+    default: JPY
+  lineAmount:
+    type: number
+    format: float
+    description: 行金额
+  taxAmount:
+    type: number
+    format: float
+    description: 行税额
   note:
     type: string
     description: 备注

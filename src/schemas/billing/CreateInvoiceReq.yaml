@@ -1,0 +1,28 @@
+type: object
+required:
+  - customerId
+  - outboundId
+properties:
+  customerId:
+    type: integer
+    description: 客户ID
+  outboundId:
+    type: integer
+    description: 需要生成发票的出库单ID
+  dueDate:
+    type: string
+    format: date
+    description: 付款截止日期
+  currency:
+    type: string
+    description: 结算币种，仅支持JPY，缺省为JPY
+    enum:
+      - JPY
+    default: JPY
+  autoIssue:
+    type: boolean
+    description: 创建后是否自动下发
+    default: false
+  notes:
+    type: string
+    description: 补充说明

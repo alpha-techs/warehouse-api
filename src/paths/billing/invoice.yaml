@@ -1,0 +1,18 @@
+post:
+  summary: 创建发票
+  operationId: createInvoice
+  tags:
+    - 结算
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: '../../index.yaml#/components/schemas/CreateInvoiceReq'
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: '../../index.yaml#/components/schemas/Invoice'
