@@ -1,0 +1,8 @@
+type: object
+required:
+  - refreshToken
+properties:
+  refreshToken:
+    type: string
+    description: 需要失效的Refresh Token
+    example: dGhpc19pc19hX3NhbXBsZV9yZWZyZXNoX3Rva2Vu

@@ -1,0 +1,40 @@
+post:
+  summary: 刷新访问令牌
+  operationId: refreshToken
+  tags:
+    - 认证
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: '../../index.yaml#/components/schemas/RefreshTokenReq'
+        examples:
+          default:
+            value:
+              refreshToken: dGhpc19pc19hX3NhbXBsZV9yZWZyZXNoX3Rva2Vu
+  responses:
+    '200':
+      description: 刷新成功
+      content:
+        application/json:
+          schema:
+            $ref: '../../index.yaml#/components/schemas/LoginResp'
+          examples:
+            default:
+              value:
+                tokens:
+                  tokenType: Bearer
+                  accessToken: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9
+                  expiresIn: 3600
+                  refreshToken: Zm9vX3JlZnJlc2hfdG9rZW4
+                  refreshTokenExpiresIn: 604800
+                employee:
+                  id: emp_12345
+                  email: employee@example.com
+                  name: 张三
+                  roles:
+                    - admin
+                    - warehouse_manager
+                  lastLoginAt: 2024-05-06T03:20:00Z
+                  avatarUrl: https://cdn.example.com/avatar/emp_12345.png

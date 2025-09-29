@@ -16,7 +16,7 @@ get:
       content:
         application/json:
           schema:
-            $ref: '../../index.yaml#/components/schemas/GetCustomerResp'
+            $ref: '../../index.yaml#/components/schemas/GetContainerResp'
 
 put:
   summary: 更新集装箱

@@ -1,0 +1,20 @@
+post:
+  summary: 用户登出
+  operationId: logout
+  tags:
+    - 认证
+  security:
+    - bearerAuth: []
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: '../../index.yaml#/components/schemas/LogoutReq'
+        examples:
+          default:
+            value:
+              refreshToken: dGhpc19pc19hX3NhbXBsZV9yZWZyZXNoX3Rva2Vu
+  responses:
+    '204':
+      description: 登出成功，无返回内容

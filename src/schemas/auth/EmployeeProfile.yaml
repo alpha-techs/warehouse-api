@@ -1,0 +1,39 @@
+type: object
+description: 员工基础信息
+required:
+  - id
+  - email
+  - name
+  - roles
+properties:
+  id:
+    type: string
+    description: 员工ID
+    example: emp_12345
+  email:
+    type: string
+    format: email
+    description: 员工邮箱
+    example: employee@example.com
+  name:
+    type: string
+    description: 员工姓名
+    example: 张三
+  roles:
+    type: array
+    description: 员工角色列表
+    items:
+      type: string
+    example:
+      - admin
+      - warehouse_manager
+  lastLoginAt:
+    type: string
+    format: date-time
+    description: 上次登录时间
+    example: 2024-05-06T03:20:00Z
+  avatarUrl:
+    type: string
+    format: uri
+    description: 员工头像链接
+    example: https://cdn.example.com/avatar/emp_12345.png

@@ -16,6 +16,16 @@ security:
   - bearerAuth: []
 
 paths:
+  # 认证
+  /auth/login:
+    $ref: './paths/auth/login.yaml'
+  /auth/refresh:
+    $ref: './paths/auth/refresh.yaml'
+  /auth/logout:
+    $ref: './paths/auth/logout.yaml'
+  /auth/profile:
+    $ref: './paths/auth/profile.yaml'
+
   # 仪表盘
   /dashboard/stats:
     $ref: './paths/dashboard/stats.yaml'
@@ -209,6 +219,22 @@ components:
       bearerFormat: JWT
 
   schemas:
+    # 认证
+    AuthTokens:
+      $ref: './schemas/auth/AuthTokens.yaml'
+    EmployeeProfile:
+      $ref: './schemas/auth/EmployeeProfile.yaml'
+    LoginReq:
+      $ref: './schemas/auth/LoginReq.yaml'
+    LoginResp:
+      $ref: './schemas/auth/LoginResp.yaml'
+    RefreshTokenReq:
+      $ref: './schemas/auth/RefreshTokenReq.yaml'
+    LogoutReq:
+      $ref: './schemas/auth/LogoutReq.yaml'
+    AuthProfileResp:
+      $ref: './schemas/auth/AuthProfileResp.yaml'
+
     # 通用
     Address:
       $ref: './schemas/common/Address.yaml'

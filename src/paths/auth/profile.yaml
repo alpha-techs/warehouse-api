@@ -1,0 +1,26 @@
+get:
+  summary: 获取当前登录员工信息
+  operationId: getAuthProfile
+  tags:
+    - 认证
+  security:
+    - bearerAuth: []
+  responses:
+    '200':
+      description: 查询成功
+      content:
+        application/json:
+          schema:
+            $ref: '../../index.yaml#/components/schemas/AuthProfileResp'
+          examples:
+            default:
+              value:
+                employee:
+                  id: emp_12345
+                  email: employee@example.com
+                  name: 张三
+                  roles:
+                    - admin
+                    - warehouse_manager
+                  lastLoginAt: 2024-05-06T03:20:00Z
+                  avatarUrl: https://cdn.example.com/avatar/emp_12345.png

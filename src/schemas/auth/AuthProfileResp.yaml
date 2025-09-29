@@ -1,0 +1,16 @@
+type: object
+required:
+  - employee
+properties:
+  employee:
+    $ref: '../../index.yaml#/components/schemas/EmployeeProfile'
+example:
+  employee:
+    id: emp_12345
+    email: employee@example.com
+    name: 张三
+    roles:
+      - admin
+      - warehouse_manager
+    lastLoginAt: 2024-05-06T03:20:00Z
+    avatarUrl: https://cdn.example.com/avatar/emp_12345.png

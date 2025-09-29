@@ -1,0 +1,31 @@
+type: object
+description: JWT令牌信息
+required:
+  - tokenType
+  - accessToken
+  - expiresIn
+  - refreshToken
+  - refreshTokenExpiresIn
+properties:
+  tokenType:
+    type: string
+    description: 令牌类型，通常为Bearer
+    example: Bearer
+  accessToken:
+    type: string
+    description: Access Token
+    example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9
+  expiresIn:
+    type: integer
+    format: int64
+    description: Access Token有效期（秒）
+    example: 3600
+  refreshToken:
+    type: string
+    description: Refresh Token
+    example: dGhpc19pc19hX3NhbXBsZV9yZWZyZXNoX3Rva2Vu
+  refreshTokenExpiresIn:
+    type: integer
+    format: int64
+    description: Refresh Token有效期（秒）
+    example: 604800
