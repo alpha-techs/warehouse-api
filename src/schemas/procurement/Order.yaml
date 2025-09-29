@@ -1,0 +1,67 @@
+type: object
+properties:
+  id:
+    type: integer
+    description: 注文ID
+  orderNumber:
+    type: string
+    description: 注文编号
+  status:
+    type: string
+    description: 状态
+    enum:
+      - draft
+      - requested
+      - sent
+      - completed
+      - cancelled
+  customer:
+    type: object
+    description: 客户信息
+    properties:
+      id:
+        type: integer
+        description: 客户ID
+      name:
+        type: string
+        description: 客户名称
+    additionalProperties: false
+  deliveryDueDate:
+    type: string
+    format: date
+    description: 纳期
+  deliveryAddress:
+    $ref: '../../index.yaml#/components/schemas/Address'
+  contactName:
+    type: string
+    description: 负责人姓名
+  contactPhone:
+    type: string
+    description: 联系电话
+  items:
+    type: array
+    description: 注文明细列表
+    items:
+      $ref: '../../index.yaml#/components/schemas/OrderItem'
+  totalAmount:
+    type: number
+    format: float
+    description: 总金额（未含税）
+  currency:
+    type: string
+    description: 货币，仅支持JPY
+    enum:
+      - JPY
+    default: JPY
+  notes:
+    type: string
+    description: 备注
+  createdAt:
+    type: string
+    format: date-time
+    description: 创建时间
+  updatedAt:
+    type: string
+    format: date-time
+    description: 更新时间
+additionalProperties: false

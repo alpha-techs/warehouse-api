@@ -1,0 +1,34 @@
+type: object
+properties:
+  customerId:
+    type: integer
+    description: 客户ID
+  deliveryDueDate:
+    type: string
+    format: date
+    description: 纳期
+  deliveryAddress:
+    $ref: '../../index.yaml#/components/schemas/Address'
+  contactName:
+    type: string
+    description: 负责人姓名
+  contactPhone:
+    type: string
+    description: 联系电话
+  items:
+    type: array
+    description: 注文明细
+    items:
+      $ref: '../../index.yaml#/components/schemas/OrderItemInput'
+    minItems: 1
+  notes:
+    type: string
+    description: 备注
+additionalProperties: false
+required:
+  - customerId
+  - deliveryDueDate
+  - deliveryAddress
+  - contactName
+  - contactPhone
+  - items

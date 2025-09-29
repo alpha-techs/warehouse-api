@@ -1,0 +1,29 @@
+post:
+  summary: 生成注文打印版Excel
+  operationId: generateOrderPrint
+  tags:
+    - 采购
+  description: |
+    生成指定注文书的打印版Excel文件。
+    打印任务将异步执行，返回任务ID用于查询状态和下载。
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: '../../index.yaml#/components/schemas/OrderPrintReq'
+  responses:
+    '202':
+      description: 注文打印任务已接受
+      content:
+        application/json:
+          schema:
+            $ref: '../../index.yaml#/components/schemas/OrderPrintResp'
+    '400':
+      description: 请求参数错误
+    '404':
+      description: 注文不存在
+    '409':
+      description: 注文状态不支持生成打印版
+    '500':
+      description: 服务器内部错误

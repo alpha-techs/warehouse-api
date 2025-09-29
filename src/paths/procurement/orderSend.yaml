@@ -1,0 +1,25 @@
+post:
+  summary: 下发注文书
+  operationId: sendOrder
+  tags:
+    - 采购
+  parameters:
+    - name: id
+      in: path
+      required: true
+      description: 注文ID
+      schema:
+        type: integer
+  responses:
+    '200':
+      description: 成功下发注文书
+      content:
+        application/json:
+          schema:
+            $ref: '../../index.yaml#/components/schemas/Order'
+    '404':
+      description: 注文不存在
+    '409':
+      description: 当前状态不允许下发
+    '500':
+      description: 服务器内部错误

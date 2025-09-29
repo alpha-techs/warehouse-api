@@ -1,0 +1,26 @@
+get:
+  summary: 获取注文打印任务状态
+  operationId: getOrderPrintStatus
+  tags:
+    - 采购
+  description: |
+    根据打印任务ID获取生成状态。
+    可用于轮询检查注文打印版是否生成完成。
+  parameters:
+    - name: printId
+      in: path
+      required: true
+      description: 注文打印任务ID
+      schema:
+        type: string
+  responses:
+    '200':
+      description: 成功获取注文打印任务状态
+      content:
+        application/json:
+          schema:
+            $ref: '../../index.yaml#/components/schemas/OrderPrint'
+    '404':
+      description: 打印任务不存在
+    '500':
+      description: 服务器内部错误

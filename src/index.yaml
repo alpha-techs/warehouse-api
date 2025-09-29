@@ -162,6 +162,30 @@ paths:
   /billing/invoicePrints/{printId}/download:
     $ref: './paths/billing/invoicePrintDownload.yaml'
 
+  # 注文
+  /procurement/orders:
+    $ref: './paths/procurement/orderList.yaml'
+  /procurement/order:
+    $ref: './paths/procurement/order.yaml'
+  /procurement/order/{id}:
+    $ref: './paths/procurement/orderId.yaml'
+  /procurement/order/{id}/submit:
+    $ref: './paths/procurement/orderSubmit.yaml'
+  /procurement/order/{id}/send:
+    $ref: './paths/procurement/orderSend.yaml'
+  /procurement/order/{id}/complete:
+    $ref: './paths/procurement/orderComplete.yaml'
+  /procurement/order/{id}/cancel:
+    $ref: './paths/procurement/orderCancel.yaml'
+  /procurement/orderPrints:
+    $ref: './paths/procurement/orderPrintList.yaml'
+  /procurement/orderPrint/generate:
+    $ref: './paths/procurement/generateOrderPrint.yaml'
+  /procurement/orderPrints/{printId}/status:
+    $ref: './paths/procurement/orderPrintStatus.yaml'
+  /procurement/orderPrints/{printId}/download:
+    $ref: './paths/procurement/orderPrintDownload.yaml'
+
   # 集装箱
   /containers:
     $ref: './paths/container/list.yaml'
@@ -325,6 +349,27 @@ components:
       $ref: './schemas/billing/InvoicePrint.yaml'
     InvoicePrintListResp:
       $ref: './schemas/billing/InvoicePrintListResp.yaml'
+    # 采购
+    Order:
+      $ref: './schemas/procurement/Order.yaml'
+    OrderItem:
+      $ref: './schemas/procurement/OrderItem.yaml'
+    OrderItemInput:
+      $ref: './schemas/procurement/OrderItemInput.yaml'
+    CreateOrderReq:
+      $ref: './schemas/procurement/CreateOrderReq.yaml'
+    UpdateOrderReq:
+      $ref: './schemas/procurement/UpdateOrderReq.yaml'
+    ListOrdersResp:
+      $ref: './schemas/procurement/ListOrdersResp.yaml'
+    OrderPrintReq:
+      $ref: './schemas/procurement/OrderPrintReq.yaml'
+    OrderPrintResp:
+      $ref: './schemas/procurement/OrderPrintResp.yaml'
+    OrderPrint:
+      $ref: './schemas/procurement/OrderPrint.yaml'
+    OrderPrintListResp:
+      $ref: './schemas/procurement/OrderPrintListResp.yaml'
     # 集装箱
     Container:
       $ref: './schemas/container/Container.yaml'

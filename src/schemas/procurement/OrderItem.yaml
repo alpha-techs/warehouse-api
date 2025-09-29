@@ -1,0 +1,44 @@
+type: object
+properties:
+  id:
+    type: integer
+    description: 注文明细ID
+  product:
+    type: object
+    description: 商品信息
+    properties:
+      id:
+        type: integer
+        description: 商品ID
+      name:
+        type: string
+        description: 商品名称
+      sku:
+        type: string
+        description: 商品SKU
+    additionalProperties: false
+  quantity:
+    type: number
+    format: float
+    description: 订购数量
+  unit:
+    type: string
+    description: 计量单位
+  unitPrice:
+    type: number
+    format: float
+    description: 单价（未含税）
+  currency:
+    type: string
+    description: 货币，仅支持JPY
+    enum:
+      - JPY
+    default: JPY
+  lineAmount:
+    type: number
+    format: float
+    description: 明细金额（未含税）
+  note:
+    type: string
+    description: 明细备注
+additionalProperties: false

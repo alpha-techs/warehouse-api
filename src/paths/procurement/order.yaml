@@ -1,0 +1,26 @@
+post:
+  summary: 创建注文书
+  operationId: createOrder
+  tags:
+    - 采购
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: '../../index.yaml#/components/schemas/CreateOrderReq'
+  responses:
+    '200':
+      description: 成功创建注文书
+      content:
+        application/json:
+          schema:
+            $ref: '../../index.yaml#/components/schemas/Order'
+    '400':
+      description: 请求参数错误
+    '404':
+      description: 客户不存在
+    '409':
+      description: 注文明细不合法
+    '500':
+      description: 服务器内部错误

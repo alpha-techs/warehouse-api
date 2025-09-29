@@ -1,0 +1,35 @@
+type: object
+properties:
+  printId:
+    type: string
+    description: 打印任务ID
+  order:
+    type: object
+    description: 注文关键信息
+    properties:
+      id:
+        type: integer
+        description: 注文ID
+      orderNumber:
+        type: string
+        description: 注文编号
+      status:
+        type: string
+        description: 注文状态
+        enum:
+          - draft
+          - requested
+          - sent
+          - completed
+          - cancelled
+    additionalProperties: false
+  format:
+    type: string
+    description: 打印文件格式
+    enum:
+      - excel
+  expiresAt:
+    type: string
+    format: date-time
+    description: 下载链接过期时间
+additionalProperties: false

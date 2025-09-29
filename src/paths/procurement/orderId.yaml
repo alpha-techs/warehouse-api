@@ -1,0 +1,77 @@
+get:
+  summary: 注文详情
+  operationId: getOrder
+  tags:
+    - 采购
+  parameters:
+    - name: id
+      in: path
+      required: true
+      description: 注文ID
+      schema:
+        type: integer
+  responses:
+    '200':
+      description: 成功获取注文详情
+      content:
+        application/json:
+          schema:
+            $ref: '../../index.yaml#/components/schemas/Order'
+    '404':
+      description: 注文不存在
+
+put:
+  summary: 更新注文书
+  operationId: updateOrder
+  tags:
+    - 采购
+  parameters:
+    - name: id
+      in: path
+      required: true
+      description: 注文ID
+      schema:
+        type: integer
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: '../../index.yaml#/components/schemas/UpdateOrderReq'
+  responses:
+    '200':
+      description: 成功更新注文书
+      content:
+        application/json:
+          schema:
+            $ref: '../../index.yaml#/components/schemas/Order'
+    '400':
+      description: 请求参数错误
+    '404':
+      description: 注文不存在
+    '409':
+      description: 注文状态不允许修改
+
+delete:
+  summary: 取消注文书
+  operationId: cancelOrder
+  tags:
+    - 采购
+  parameters:
+    - name: id
+      in: path
+      required: true
+      description: 注文ID
+      schema:
+        type: integer
+  responses:
+    '200':
+      description: 成功取消注文书
+      content:
+        application/json:
+          schema:
+            $ref: '../../index.yaml#/components/schemas/Order'
+    '404':
+      description: 注文不存在
+    '409':
+      description: 当前状态不允许取消
