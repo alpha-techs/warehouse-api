@@ -1,0 +1,16 @@
+type: object
+required:
+  - mediaId
+properties:
+  id:
+    type: string
+    description: 商品图片记录ID
+  mediaId:
+    type: string
+    description: 媒体图片ID，用于通过媒体服务访问
+  order:
+    type: integer
+    description: 图片顺序，值越小越靠前
+  altText:
+    type: string
+    description: 图片替代文本

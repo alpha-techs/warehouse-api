@@ -1,0 +1,37 @@
+get:
+  summary: 获取图片内容
+  operationId: getMediaImage
+  tags:
+    - 媒体
+  parameters:
+    - name: imageId
+      in: path
+      required: true
+      description: 图片ID
+      schema:
+        type: string
+  responses:
+    '200':
+      description: 成功代理返回图片内容
+      content:
+        image/jpeg:
+          schema:
+            type: string
+            format: binary
+        image/png:
+          schema:
+            type: string
+            format: binary
+        image/webp:
+          schema:
+            type: string
+            format: binary
+      headers:
+        Content-Type:
+          description: 图片的MIME类型
+          schema:
+            type: string
+        Content-Length:
+          description: 图片大小（字节）
+          schema:
+            type: integer

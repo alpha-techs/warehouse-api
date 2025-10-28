@@ -1,0 +1,25 @@
+post:
+  summary: 上传图片
+  operationId: uploadMediaImage
+  tags:
+    - 媒体
+  requestBody:
+    required: true
+    content:
+      multipart/form-data:
+        schema:
+          type: object
+          required:
+            - file
+          properties:
+            file:
+              type: string
+              format: binary
+              description: 图片文件
+  responses:
+    '200':
+      description: 上传成功
+      content:
+        application/json:
+          schema:
+            $ref: '../../index.yaml#/components/schemas/UploadedImage'

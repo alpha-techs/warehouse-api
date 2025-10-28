@@ -1,0 +1,21 @@
+type: object
+required:
+  - mediaId
+properties:
+  mediaId:
+    type: string
+    description: 媒体图片ID，用于后续访问或绑定商品
+  url:
+    type: string
+    format: uri
+    description: 图片访问地址（通过媒体服务代理访问，可能受权限控制）
+  fileName:
+    type: string
+    description: 原始文件名
+  contentType:
+    type: string
+    description: 文件MIME类型
+  size:
+    type: integer
+    format: int64
+    description: 文件大小（字节）

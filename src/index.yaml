@@ -46,6 +46,12 @@ paths:
   /product/{id}:
     $ref: './paths/product/id.yaml'
 
+  # 媒体
+  /media/images:
+    $ref: './paths/media/uploadImage.yaml'
+  /media/images/{imageId}:
+    $ref: './paths/media/imageId.yaml'
+
   # 客户接口
   /customers:
     $ref: './paths/customer/list.yaml'
@@ -259,6 +265,8 @@ components:
     # 商品
     Product:
       $ref: './schemas/product/Product.yaml'
+    ProductImage:
+      $ref: './schemas/product/ProductImage.yaml'
     ProductCategory:
       $ref: './schemas/product/ProductCategory.yaml'
     CreateProductReq:
@@ -269,6 +277,9 @@ components:
       $ref: './schemas/product/GetProductResp.yaml'
     ListProductsResp:
       $ref: './schemas/product/ListProductsResp.yaml'
+    # 媒体
+    UploadedImage:
+      $ref: './schemas/media/UploadedImage.yaml'
     # 客户
     Customer:
       $ref: './schemas/customer/Customer.yaml'

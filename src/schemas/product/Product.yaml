@@ -20,6 +20,11 @@ properties:
   cargoMark:
     type: string
     description: 货物标记
+  images:
+    type: array
+    description: 商品图片列表
+    items:
+      $ref: '../../index.yaml#/components/schemas/ProductImage'
   dimension:
     type: object
     properties:
