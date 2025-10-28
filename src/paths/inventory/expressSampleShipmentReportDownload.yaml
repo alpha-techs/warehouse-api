@@ -1,0 +1,41 @@
+get:
+  summary: 下载Express Sample出库报告
+  operationId: downloadExpressSampleShipmentReport
+  tags:
+    - Express Sample报告
+  description: |
+    直接返回已生成的Express Sample出库报告Excel文件内容。
+  parameters:
+    - name: reportId
+      in: path
+      required: true
+      description: Express Sample出库报告ID
+      schema:
+        type: string
+  responses:
+    '200':
+      description: 成功下载Express Sample出库报告文件
+      content:
+        application/vnd.openxmlformats-officedocument.spreadsheetml.sheet:
+          schema:
+            type: string
+            format: binary
+          examples:
+            excel_report:
+              summary: Express Sample出库报告（Excel）
+      headers:
+        Content-Disposition:
+          description: 文件下载附件头
+          schema:
+            type: string
+            example: 'attachment; filename="express_sample_shipment_report.xlsx"'
+        Content-Length:
+          description: 文件大小
+          schema:
+            type: integer
+    '404':
+      description: 报告不存在或未完成
+    '410':
+      description: 下载链接已过期
+    '500':
+      description: 服务器内部错误

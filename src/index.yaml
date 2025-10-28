@@ -92,6 +92,30 @@ paths:
   /inventory/outboundItems:
     $ref: './paths/inventory/outboundItemList.yaml'
 
+  # Express Sample Shipment
+  /inventory/expressSampleShipments:
+    $ref: './paths/inventory/expressSampleShipments.yaml'
+  /inventory/expressSampleShipment:
+    $ref: './paths/inventory/expressSampleShipment.yaml'
+  /inventory/expressSampleShipment/{id}:
+    $ref: './paths/inventory/expressSampleShipmentId.yaml'
+  /inventory/expressSampleShipment/{id}/approve:
+    $ref: './paths/inventory/expressSampleShipmentApprove.yaml'
+  /inventory/expressSampleShipment/{id}/reject:
+    $ref: './paths/inventory/expressSampleShipmentReject.yaml'
+  /inventory/expressSampleShipment/{id}/cancel:
+    $ref: './paths/inventory/expressSampleShipmentCancel.yaml'
+  /inventory/expressSampleShipmentItems:
+    $ref: './paths/inventory/expressSampleShipmentItemList.yaml'
+  /inventory/expressSampleShipmentReports:
+    $ref: './paths/inventory/expressSampleShipmentReportList.yaml'
+  /inventory/expressSampleShipmentReport/generate:
+    $ref: './paths/inventory/generateExpressSampleShipmentReport.yaml'
+  /inventory/expressSampleShipmentReports/{reportId}/status:
+    $ref: './paths/inventory/expressSampleShipmentReportStatus.yaml'
+  /inventory/expressSampleShipmentReports/{reportId}/download:
+    $ref: './paths/inventory/expressSampleShipmentReportDownload.yaml'
+
   # 在库
   /inventory/list:
     $ref: './paths/inventory/list.yaml'
@@ -320,6 +344,22 @@ components:
       $ref: './schemas/inventory/ListOutboundItemsResp.yaml'
     OutboundItem:
       $ref: './schemas/inventory/OutboundItem.yaml'
+    ExpressSampleShipment:
+      $ref: './schemas/inventory/ExpressSampleShipment.yaml'
+    ListExpressSampleShipmentsResp:
+      $ref: './schemas/inventory/ListExpressSampleShipmentsResp.yaml'
+    ListExpressSampleShipmentItemsResp:
+      $ref: './schemas/inventory/ListExpressSampleShipmentItemsResp.yaml'
+    ExpressSampleShipmentItem:
+      $ref: './schemas/inventory/ExpressSampleShipmentItem.yaml'
+    ExpressSampleShipmentReportReq:
+      $ref: './schemas/inventory/ExpressSampleShipmentReportReq.yaml'
+    ExpressSampleShipmentReportResp:
+      $ref: './schemas/inventory/ExpressSampleShipmentReportResp.yaml'
+    ExpressSampleShipmentReport:
+      $ref: './schemas/inventory/ExpressSampleShipmentReport.yaml'
+    ExpressSampleShipmentReportListResp:
+      $ref: './schemas/inventory/ExpressSampleShipmentReportListResp.yaml'
     # 在库报告
     InventoryReportReq:
       $ref: './schemas/inventory/InventoryReportReq.yaml'

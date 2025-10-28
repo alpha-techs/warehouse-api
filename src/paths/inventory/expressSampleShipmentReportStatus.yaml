@@ -1,0 +1,25 @@
+get:
+  summary: 获取Express Sample出库报告生成状态
+  operationId: getExpressSampleShipmentReportStatus
+  tags:
+    - Express Sample报告
+  description: |
+    根据报告ID获取Express Sample出库报告的生成状态。
+  parameters:
+    - name: reportId
+      in: path
+      required: true
+      description: Express Sample出库报告ID
+      schema:
+        type: string
+  responses:
+    '200':
+      description: 成功获取Express Sample出库报告状态
+      content:
+        application/json:
+          schema:
+            $ref: '../../index.yaml#/components/schemas/ExpressSampleShipmentReport'
+    '404':
+      description: 报告不存在
+    '500':
+      description: 服务器内部错误

@@ -1,0 +1,20 @@
+post:
+  summary: 驳回Express Sample出库
+  operationId: rejectExpressSampleShipment
+  tags:
+    - 库存
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: integer
+        format: int32
+        description: Express sample shipment ID
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: '../../index.yaml#/components/schemas/ExpressSampleShipment'

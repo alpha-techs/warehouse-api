@@ -1,0 +1,58 @@
+type: object
+description: Express sample shipment item
+properties:
+  id:
+    type: integer
+    description: Express sample shipment item ID
+  expressSampleShipmentId:
+    type: integer
+    description: Express sample shipment ID
+  inventoryItemId:
+    type: integer
+    description: 库存物品ID
+  inventoryItem:
+    type: object
+    description: 库存物品详情
+    properties:
+      id:
+        type: integer
+        description: 库存物品ID
+      lotNumber:
+        type: string
+        description: 批次号
+      inboundNo:
+        type: string
+        description: 入库编号
+      inboundDate:
+        type: string
+        format: date
+        description: 入库日期
+  product:
+    type: object
+    description: 商品信息
+    properties:
+      id:
+        type: integer
+        description: 商品ID
+      sku:
+        type: string
+        description: SKU 编码
+      name:
+        type: string
+        description: 商品名称
+      specification:
+        type: string
+        description: 规格说明
+  quantity:
+    type: integer
+    description: 发货数量
+    minimum: 1
+  quantityUnit:
+    type: string
+    description: 数量单位
+  samplePackaging:
+    type: string
+    description: 样品包装说明
+  note:
+    type: string
+    description: 备注

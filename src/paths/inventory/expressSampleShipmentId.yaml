@@ -1,0 +1,61 @@
+get:
+  summary: Express sample shipment detail
+  operationId: getExpressSampleShipment
+  tags:
+    - 库存
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: integer
+        format: int32
+        description: Express sample shipment ID
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: '../../index.yaml#/components/schemas/ExpressSampleShipment'
+
+put:
+  summary: 更新Express Sample出库
+  operationId: updateExpressSampleShipment
+  tags:
+    - 库存
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: integer
+        format: int32
+        description: Express sample shipment ID
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: '../../index.yaml#/components/schemas/ExpressSampleShipment'
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: '../../index.yaml#/components/schemas/ExpressSampleShipment'
+
+delete:
+  summary: 删除Express Sample出库
+  operationId: deleteExpressSampleShipment
+  tags:
+    - 库存
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: integer
+        format: int32
+        description: Express sample shipment ID

@@ -1,0 +1,18 @@
+post:
+  summary: 创建急送样品出库
+  operationId: createExpressSampleShipment
+  tags:
+    - 库存
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: '../../index.yaml#/components/schemas/ExpressSampleShipment'
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: '../../index.yaml#/components/schemas/ExpressSampleShipment'

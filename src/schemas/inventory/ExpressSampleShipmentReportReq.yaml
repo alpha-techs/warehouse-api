@@ -1,0 +1,13 @@
+type: object
+properties:
+  expressSampleShipmentId:
+    type: integer
+    description: Express sample shipment ID
+  format:
+    type: string
+    description: Report format
+    enum:
+      - excel
+    default: excel
+required:
+  - expressSampleShipmentId

@@ -1,0 +1,26 @@
+post:
+  summary: 生成Express Sample出库报告
+  operationId: generateExpressSampleShipmentReport
+  tags:
+    - Express Sample报告
+  description: |
+    提交生成Express Sample出库的Excel报告任务。
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: '../../index.yaml#/components/schemas/ExpressSampleShipmentReportReq'
+  responses:
+    '202':
+      description: Express Sample出库报告生成任务已接受
+      content:
+        application/json:
+          schema:
+            $ref: '../../index.yaml#/components/schemas/ExpressSampleShipmentReportResp'
+    '400':
+      description: 请求参数错误
+    '404':
+      description: Express Sample出库记录不存在
+    '500':
+      description: 服务器内部错误

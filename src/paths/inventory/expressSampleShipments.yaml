@@ -1,0 +1,56 @@
+get:
+  summary: Express sample shipment list
+  operationId: listExpressSampleShipments
+  tags:
+    - 库存
+  parameters:
+    - name: page
+      in: query
+      description: 页码
+      schema:
+        type: integer
+        default: 1
+    - name: itemsPerPage
+      in: query
+      description: 每页数量
+      schema:
+        type: integer
+        default: 20
+    - name: status
+      in: query
+      description: Express sample shipment status
+      schema:
+        type: string
+        enum:
+          - draft
+          - pending
+          - approved
+          - rejected
+          - cancelled
+          - booked
+          - dispatched
+          - delivered
+    - name: customerId
+      in: query
+      description: 客户ID
+      schema:
+        type: integer
+    - name: desiredDeliveryDateFrom
+      in: query
+      description: 送达日期起始
+      schema:
+        type: string
+        format: date
+    - name: desiredDeliveryDateTo
+      in: query
+      description: 送达日期结束
+      schema:
+        type: string
+        format: date
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: '../../index.yaml#/components/schemas/ListExpressSampleShipmentsResp'

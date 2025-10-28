@@ -1,0 +1,41 @@
+get:
+  summary: Express sample shipment item list
+  operationId: listExpressSampleShipmentItems
+  tags:
+    - 库存
+  parameters:
+    - name: page
+      in: query
+      description: 页码
+      schema:
+        type: integer
+        default: 1
+    - name: itemsPerPage
+      in: query
+      description: 每页数量
+      schema:
+        type: integer
+        default: 20
+    - name: expressSampleShipmentId
+      in: query
+      description: Express sample shipment ID
+      schema:
+        type: integer
+    - name: productId
+      in: query
+      description: 商品ID
+      schema:
+        type: integer
+    - name: desiredDeliveryDate
+      in: query
+      description: 希望送达日期
+      schema:
+        type: string
+        format: date
+  responses:
+    '200':
+      description: 成功
+      content:
+        application/json:
+          schema:
+            $ref: '../../index.yaml#/components/schemas/ListExpressSampleShipmentItemsResp'
